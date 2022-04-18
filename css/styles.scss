@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Ubuntu Mono", monospace;
+  color: #313131;
+  margin: 12px;
+
+  h1 {
+      font-size: 48px;
+  }
+
+  ul {
+      list-style: none;
+  }
+}
