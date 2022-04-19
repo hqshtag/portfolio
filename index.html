@@ -13,21 +13,19 @@
 <body>
 
     <section class="hero">
-        <h1 class="welcome-text"> Hello, My name is Mohamed Wajih Tagourty
-        </h1>
-        <h4>You can also call me Hqshtag, that's my Alias, </h4>
-        <h2 class="titles">I'm a
-            <span id="mi-titles"></span>
-        </h2>
-        <p>
-            🟧 I design develope and maintain detail oriented front-end solutions steadily crafted for your needs and
+        <h1 class="welcome-text"></h1>
+        <h2 class="titles" id="mi-titles"></h2>
+        <p class="hero-p">
+            I design develope and maintain detail oriented front-end solutions steadily crafted for your needs and
             specifications whether it's a </p>
         <ul class="solutions">
             <li> 🟦 Mobile app 📲</li>
             <li> 🟩 Desktop app 🖥</li>
-            <li> 🟨 Website / app (SPA or PWA) 💻 </li>
+            <li> 🟨 Web app (SPA/PWA) 💻 </li>
         </ul>
     </section>
+
+
 
     <section class="services">
         <h2 class="h-question">How can I provide my services?</h2>
@@ -90,16 +88,29 @@
                 href="https://github.com/hqshtag" target="_blank">Github</a>, <a
                 href="https://www.upwork.com/freelancers/~016084b5f594c92d1f" target="_blank">Upwork</a></p>
     </section>
+    <script src="./js/script.js"></script>
 
     <script>
-        var options = {
-            strings: ['ReactJS developer', 'UI/UX Designer', 'Analyst Programmer', 'Software Developer', 'Javacript Expert', 'Full-Stack Developer'],
+        const introOps = {
+            strings: ['Hello, My Name is Mohamed Wajih Tagourty', 'You can address me as <strong>Mohamed</strong> or <strong>Wajih</strong>', "You can also call me 'hqshtag', that's my alias"],
             typeSpeed: 40,
-            fadeOut: true,
-            loop: true
+            startDelay: 200
+        }
+
+
+
+        const titleOps = {
+            strings: ["I'm a ReactJS developer", "I'm a UI/UX Designer", "I'm a Software Developer", "I'm A Javacript Expert", "I'm a Full-Stack Developer"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            shuffle: true,
+            loop: true,
+            startDelay: 7200
         };
 
-        var typed = new Typed('#mi-titles', options);
+
+        const introTyped = new Typed('.welcome-text', introOps)
+        const titlesTyped = new Typed('#mi-titles', titleOps);
     </script>
 
 </body>
