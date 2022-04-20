@@ -15,7 +15,6 @@
 
     <section class="hero">
         <h1 class="welcome-text"></h1>
-        <h2 class="titles" id="mi-titles"></h2>
 
     </section>
 
@@ -39,13 +38,17 @@
         </section>
 
 
-        <secion class="skills">
+        <section class="skills">
             <h2>My Skills and Competances</h2>
-            <p> I'm the programmer for you to turn your bright ideas into softwre that satisfies the end user. Tuning
+            <p>I'm the
+                <span class="titles" id="mi-titles">Programmer</span>
+
+                for you to turn your bright ideas into softwre that satisfies the end user. Tuning
                 your
                 business to innovative technologies and modern applications, you've got a developer specialized in web
                 and
-                mobile development with over 5 years of experience durning which I picked up these tech skills;</p>
+                mobile development with over 5 years of experience durning which I picked up these tech skills;
+            </p>
 
             <ul class="skill-list">
                 <li> ✔️ HTML / CSS / Less / Sass</li>
@@ -64,7 +67,7 @@
                 and
                 Google's.
             </p>
-        </secion>
+        </section>
 
 
         <section class="services">
@@ -109,20 +112,23 @@
 
     <script>
         const introOps = {
-            strings: ['Hello, My Name is Mohamed Wajih Tagourty', 'You can address me as <strong>Mohamed</strong> or <strong>Wajih</strong>', "You can also call me 'hqshtag', that's my alias", `I'm looking forward to getting to know you and I appreciate your interest, Thanks!`],
-            typeSpeed: 40,
+            strings: [`Hello, My Name is Mohamed Wajih Tagourty.`, `You can address me as <strong>Mohamed</strong> or <strong>Wajih</strong>. ^400\n You can also call me 'hqshtag', that's my alias.`, `I'm looking forward to getting to know you and I appreciate your interest, Thanks!`],
+            typeSpeed: 30,
+            backSpeed: 20,
             startDelay: 200
         }
 
 
 
         const titleOps = {
-            strings: ["I'm a ReactJS developer", "I'm a UI/UX Designer", "I'm a Software Engineer", "I'm a Javacript Expert"],
+            strings: ["ReactJS developer", "UI/UX Designer", "Software Engineer", "Javacript Expert"],
             typeSpeed: 60,
             backSpeed: 40,
             shuffle: true,
             loop: true,
-            startDelay: 18000
+            startDelay: 1000,
+            cursorChar: '_',
+
         };
 
 
