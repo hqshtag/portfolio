@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+
+@import "./hero";
+@import './skills';
+@import "./sercives";
+@import "./contact";
+
 * {
   margin: 0;
   padding: 0;
@@ -30,36 +36,6 @@ body {
   }
 }
 
-.hero {
-  min-height: 60vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 3.0rem auto;
-  h1.welcome-text {
-    min-height: 80px;
-    animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
-  }
-  h2.titles {
-    max-height: 60px;
-  }
-  p.hero-p {
-    margin: 2.0rem auto;
-  }
-
-  ul.solutions {
-    align-self: center;
-    background-color: #adadad;
-    margin: 12px;
-    padding: 12px 24px;
-    border-radius: 4px;
-    width: 88vw;
-
-    color: whitesmoke;
-    
-  }
-}
 
 
 span.typed-cursor{
@@ -68,36 +44,3 @@ span.typed-cursor{
   visibility: hidden;
 }
 
-
-#servicesQuestion {
-  text-align: left;
-  letter-spacing: 1px;
-  color: #333;
-
-  span {
-    display: inline-block;
-    animation: slideLeft 1.5s forwards;
-    animation-delay: 5000ms;
-    opacity: 0;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-}
-@keyframes scaleDownFontSize {
-  from {
-    font-size: 3.6rem;
-  }
-  to {
-    font-size: 2.8rem;
-  }
-}
-
-@keyframes slideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(200px);
-  } 
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}

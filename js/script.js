@@ -1,24 +1,34 @@
-/* let spanText = function spanText(text) {
-  let string = text.innerText;
-  let spaned = "";
-  for (let i = 0; i < string.length; i++) {
-    if (string.substring(i, i + 1) === " ")
-      spaned += string.substring(i, i + 1);
-    else spaned += "<span>" + string.substring(i, i + 1) + "</span>";
-  }
-  text.innerHTML = spaned;
+const elementInView = (el, scrollOffset = 0) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) - scrollOffset
+  );
+};
+const showElement = (element) => {
+  element.classList.add("showup");
 };
 
-let headline = document.querySelector("#servicesQuestion");
+const hideElement = (element) => {
+  element.classList.remove("showup");
+};
 
-spanText(headline);
-
-let animations = document.querySelectorAll(".animation");
-
-animations.forEach((animation) => {
-  let letters = animation.querySelectorAll("span");
-  letters.forEach((letter, i) => {
-    letter.style.animationDelay = i * 0.1 + "s";
-  });
+$(() => {
+  console.log("Yay, we got jQuery!");
+  $("section.contact").addClass("showup");
 });
- */
+
+/* const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 100)) {
+      showElement(el);
+    } else {
+      hideElement(el);
+    }
+  });
+}; */
+/* 
+window.addEventListener("scroll", () => {
+  handleScrollAnimation();
+}); */

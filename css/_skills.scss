@@ -1,0 +1,14 @@
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+        background-color: rgb(205, 227, 226);
+        color: rgb(20, 84, 84);
+        height: 36px;
+        padding: 8px 12px;
+        margin: 8px;
+        border-radius: 8px;
+        line-height: 123%;
+    }
+}
