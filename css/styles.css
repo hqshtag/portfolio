@@ -43,6 +43,15 @@
   color: whitesmoke;
 }
 
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero h1, .hero h2 {
+    margin: 24px 24px;
+  }
+}
+
 section.skills span.titles {
   font-weight: 400 !important;
 }
@@ -95,13 +104,21 @@ section.skills span.titles {
   opacity: 0;
   -webkit-transition: all 1280ms ease-in-out;
   transition: all 1280ms ease-in-out;
-  -webkit-transition-delay: 16s;
-          transition-delay: 16s;
+  -webkit-transition-delay: 15s;
+          transition-delay: 15s;
 }
 
 .contact.showup {
   opacity: 1;
   top: 0px;
+}
+
+.contact h2 {
+  text-align: center;
+}
+
+.contact ul.my-contact li {
+  text-align: center;
 }
 
 .contact .links {
@@ -114,8 +131,15 @@ section.skills span.titles {
 }
 
 .contact .links a {
+  text-align: center;
   font-size: 24px;
   margin: 12px 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .contact.showup {
+    top: 150px;
+  }
 }
 
 * {
@@ -124,7 +148,7 @@ section.skills span.titles {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: "Ubuntu Mono", monospace;
   color: #313131;
   margin: 12px;
@@ -148,6 +172,18 @@ body ul {
 
 body section {
   margin: 5.2rem auto;
+}
+
+@media screen and (max-width: 600px) {
+  body h1 {
+    font-size: 2.8rem;
+  }
+  body h2 {
+    font-size: 1.8rem;
+  }
+  body p, body li {
+    font-size: 1rem;
+  }
 }
 
 span.typed-cursor {

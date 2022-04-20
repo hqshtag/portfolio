@@ -12,7 +12,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: "Ubuntu Mono", monospace;
   color: #313131;
   margin: 12px;
@@ -35,6 +35,22 @@ body {
     margin: 5.2rem auto;
   }
 }
+
+
+
+@media screen and (max-width: 600px) {
+
+  body {  h1 {
+    font-size: 2.8rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  p, li {
+    font-size: 1rem;
+  } }
+ 
+ }
 
 
 
