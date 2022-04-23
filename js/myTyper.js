@@ -1,5 +1,10 @@
 //this a free keyboard typing sound effects
-const keystrokeSound = new Audio("../assets/keytap.mp3");
+const prod = true;
+const keystrokeSound = new Audio(
+  prod
+    ? "https://hqshtag.github.io/portfolio/assets/keytap.mp3"
+    : "../assets/keytap.mp3"
+);
 
 const soundLoaded = new Event("SOUND_LOADED");
 const typingStarted = new Event("TYPING_STARTED");
