@@ -109,12 +109,33 @@ section.skills span.titles {
           transform: translateY(-255px);
 }
 
-.contact h2 {
+.contact h2.h-question {
   text-align: center;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .contact ul.my-contact li {
+  margin: 10px auto 0px;
   text-align: center;
+  font-size: 22px;
+}
+
+.contact ul.my-contact li a {
+  color: #35277a;
+}
+
+.contact div.links {
+  margin-top: 14px;
+}
+
+.contact div.links a {
+  color: #35277a;
+  margin: 2px 12px;
+}
+
+.contact a {
+  text-decoration: none;
 }
 
 .contact .links {
@@ -130,6 +151,13 @@ section.skills span.titles {
   text-align: center;
   font-size: 24px;
   margin: 12px 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .contact.showup {
+    -webkit-transform: translateY(-200px);
+            transform: translateY(-200px);
+  }
 }
 
 * {
@@ -166,10 +194,10 @@ body section {
 
 @media screen and (max-width: 600px) {
   body h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
   body h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   body p, body li {
     font-size: 1rem;
