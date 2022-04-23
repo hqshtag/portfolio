@@ -8,7 +8,6 @@
     opacity: 0;
     
     transition: all 1280ms ease-in-out;
-    transition-delay: 15s;
     &.showup {
         opacity: 1;
         top: 0px
@@ -40,7 +39,7 @@
 @media screen and (max-width: 600px) {
     .contact{
         &.showup {
-            top: 150px
+            top: 115px
         }
     
     }

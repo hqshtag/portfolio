@@ -1,6 +1,5 @@
 
 .hero {
-    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +33,6 @@
  
   @media screen and (max-width: 600px) {
     .hero {
-        height: 50vh;
         h1,h2{
             margin: 24px 24px;
         }

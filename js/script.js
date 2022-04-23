@@ -14,11 +14,6 @@ const hideElement = (element) => {
   element.classList.remove("showup");
 };
 
-$(() => {
-  console.log("Yay, we got jQuery!");
-  $("section.contact").addClass("showup");
-});
-
 /* const handleScrollAnimation = () => {
   scrollElements.forEach((el) => {
     if (elementInView(el, 100)) {

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .hero {
-  height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,9 +43,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .hero {
-    height: 50vh;
-  }
   .hero h1, .hero h2 {
     margin: 24px 24px;
   }
@@ -104,8 +100,6 @@ section.skills span.titles {
   opacity: 0;
   -webkit-transition: all 1280ms ease-in-out;
   transition: all 1280ms ease-in-out;
-  -webkit-transition-delay: 15s;
-          transition-delay: 15s;
 }
 
 .contact.showup {
@@ -138,7 +132,7 @@ section.skills span.titles {
 
 @media screen and (max-width: 600px) {
   .contact.showup {
-    top: 150px;
+    top: 115px;
   }
 }
 
@@ -151,7 +145,6 @@ body {
   overflow: hidden;
   font-family: "Ubuntu Mono", monospace;
   color: #313131;
-  margin: 12px;
 }
 
 body h1 {
@@ -184,6 +177,37 @@ body section {
   body p, body li {
     font-size: 1rem;
   }
+}
+
+.fulldisplaybutton {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #313131;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fulldisplaybutton img {
+  height: 160px;
+  border-radius: 50%;
+}
+
+.fulldisplaybutton.hide {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
 }
 
 span.typed-cursor {
