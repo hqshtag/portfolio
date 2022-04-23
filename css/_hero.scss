@@ -1,0 +1,40 @@
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    h1,h2{
+        margin: 76px 64px;
+    }
+    margin-top: 0;
+    h1.welcome-text {
+      min-height: 80px;
+      animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
+    }
+  
+    p.hero-p {
+      margin: 2.0rem auto;
+    }
+  
+    ul.solutions {
+      align-self: center;
+      background-color: #adadad;
+      margin: 12px;
+      padding: 12px 24px;
+      border-radius: 4px;
+      width: 88vw;
+  
+      color: whitesmoke;
+      
+    }
+  }
+
+ 
+  @media screen and (max-width: 600px) {
+    .hero {
+        h1,h2{
+            margin: 24px 24px;
+        }
+    }
+  }

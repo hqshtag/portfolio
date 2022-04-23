@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+
+@import "./hero";
+@import './skills';
+@import "./sercives";
+@import "./contact";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Ubuntu Mono", monospace;
+  color: #313131;
+
+  h1 {
+      font-size: 3.6rem;
+      line-height: 130%;
+
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  p, li {
+    font-size: 1.8rem;
+  }
+
+  ul {
+      list-style: none;
+  }
+
+  section {
+    margin: 5.2rem auto;
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+  body {  h1 {
+    font-size: 2.8rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  p, li {
+    font-size: 1rem;
+  } }
+ 
+ }
+
+ .fulldisplaybutton{
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   background-color: #1E1E1E;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  
+   h3 {
+     text-align: center;
+    color: white;
+    font-size: 38px;
+    font-weight: 400;
+   }
+   .avatar-wrapper{
+     background-color: #0B043A;
+    margin-top: 150px;
+    height: 200px;
+    width: 200px;
+
+    box-shadow: 0px 0px 40px 40px #0B0438;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     img {
+      height: 160px;
+      border-radius: 50%;
+    }
+   }
+ 
+ 
+
+   &.hide {
+     opacity: 0;
+     display: none;
+     visibility: hidden;
+   }
+
+ }
+
+
+
+span.typed-cursor{
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+

@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 0;
+}
+
+.hero h1, .hero h2 {
+  margin: 76px 64px;
+}
+
+.hero h1.welcome-text {
+  min-height: 80px;
+  -webkit-animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
+          animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
+}
+
+.hero p.hero-p {
+  margin: 2.0rem auto;
+}
+
+.hero ul.solutions {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #adadad;
+  margin: 12px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: 88vw;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 600px) {
+  .hero h1, .hero h2 {
+    margin: 24px 24px;
+  }
+}
+
+section.skills span.titles {
+  font-weight: 400 !important;
+}
+
+.skill-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.skill-list li {
+  background-color: #cde3e2;
+  color: #145454;
+  height: 36px;
+  padding: 8px 12px;
+  margin: 8px;
+  border-radius: 8px;
+  line-height: 123%;
+}
+
+.my-services li {
+  background-color: #e6eaec;
+  color: #275b60;
+  margin: 4px 24px;
+  padding: 8px 24px 8px 12px;
+  line-height: 140%;
+}
+
+.contact {
+  position: fixed;
+  width: 100%;
+  bottom: -255px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: all 1280ms ease-in-out;
+  transition: all 1280ms ease-in-out;
+}
+
+.contact.showup {
+  opacity: 1;
+  -webkit-transform: translateY(-255px);
+          transform: translateY(-255px);
+}
+
+.contact h2 {
+  text-align: center;
+}
+
+.contact ul.my-contact li {
+  text-align: center;
+}
+
+.contact .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact .links a {
+  text-align: center;
+  font-size: 24px;
+  margin: 12px 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Ubuntu Mono", monospace;
+  color: #313131;
+}
+
+body h1 {
+  font-size: 3.6rem;
+  line-height: 130%;
+}
+
+body h2 {
+  font-size: 2.4rem;
+}
+
+body p, body li {
+  font-size: 1.8rem;
+}
+
+body ul {
+  list-style: none;
+}
+
+body section {
+  margin: 5.2rem auto;
+}
+
+@media screen and (max-width: 600px) {
+  body h1 {
+    font-size: 2.8rem;
+  }
+  body h2 {
+    font-size: 1.8rem;
+  }
+  body p, body li {
+    font-size: 1rem;
+  }
+}
+
+.fulldisplaybutton {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1E1E1E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fulldisplaybutton h3 {
+  text-align: center;
+  color: white;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.fulldisplaybutton .avatar-wrapper {
+  background-color: #0B043A;
+  margin-top: 150px;
+  height: 200px;
+  width: 200px;
+  -webkit-box-shadow: 0px 0px 40px 40px #0B0438;
+          box-shadow: 0px 0px 40px 40px #0B0438;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fulldisplaybutton .avatar-wrapper img {
+  height: 160px;
+  border-radius: 50%;
+}
+
+.fulldisplaybutton.hide {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+span.typed-cursor {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/*# sourceMappingURL=styles.css.map */
