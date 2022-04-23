@@ -17,7 +17,7 @@
 }
 
 .hero h1, .hero h2 {
-  margin: 4px 48px;
+  margin: 76px 64px;
 }
 
 .hero h1.welcome-text {
@@ -82,8 +82,9 @@ section.skills span.titles {
 }
 
 .contact {
-  position: relative;
-  top: 300px;
+  position: fixed;
+  width: 100%;
+  bottom: -255px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,7 +105,8 @@ section.skills span.titles {
 
 .contact.showup {
   opacity: 1;
-  top: 0px;
+  -webkit-transform: translateY(-255px);
+          transform: translateY(-255px);
 }
 
 .contact h2 {
@@ -130,12 +132,6 @@ section.skills span.titles {
   margin: 12px 8px;
 }
 
-@media screen and (max-width: 600px) {
-  .contact.showup {
-    top: 115px;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -149,6 +145,7 @@ body {
 
 body h1 {
   font-size: 3.6rem;
+  line-height: 130%;
 }
 
 body h2 {
@@ -183,7 +180,7 @@ body section {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: #313131;
+  background-color: #1E1E1E;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,7 +196,33 @@ body section {
           align-items: center;
 }
 
-.fulldisplaybutton img {
+.fulldisplaybutton h3 {
+  text-align: center;
+  color: white;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.fulldisplaybutton .avatar-wrapper {
+  background-color: #0B043A;
+  margin-top: 150px;
+  height: 200px;
+  width: 200px;
+  -webkit-box-shadow: 0px 0px 40px 40px #0B0438;
+          box-shadow: 0px 0px 40px 40px #0B0438;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fulldisplaybutton .avatar-wrapper img {
   height: 160px;
   border-radius: 50%;
 }

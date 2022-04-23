@@ -1,16 +1,16 @@
 .contact{
-    position: relative;
-    top: 300px;
+    position: fixed;
+    width: 100%;
+    bottom: -255px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    
     transition: all 1280ms ease-in-out;
     &.showup {
         opacity: 1;
-        top: 0px
+        transform:translateY(-255px);
     }
 
     h2 {
@@ -35,12 +35,3 @@
 }
 
 
-
-@media screen and (max-width: 600px) {
-    .contact{
-        &.showup {
-            top: 115px
-        }
-    
-    }
-  }

@@ -83,7 +83,7 @@ $(() => {
   });
 
   $(document).on("TYPING_COMPLETE", () => {
-    console.timeEnd("TYPING DURATION");
     $("section.contact").addClass("showup");
+    console.timeEnd("TYPING DURATION");
   });
 });
