@@ -14,7 +14,9 @@
 body {
   overflow: hidden;
   font-family: "Ubuntu Mono", monospace;
-  color: #313131;
+  color: #d8e3e8;
+
+  background-color: #1E1E1E;
 
   h1 {
       font-size: 3.6rem;
@@ -66,8 +68,14 @@ body {
    h3 {
      text-align: center;
     color: white;
-    font-size: 38px;
+    font-size: 34px;
     font-weight: 400;
+    margin-bottom: 12px;
+   }
+
+   p {
+    font-size: 22px;
+    color: #CCC;
    }
    .avatar-wrapper{
      background-color: #0B043A;

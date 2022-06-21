@@ -16,8 +16,9 @@
 
     h2.h-question {
         text-align: center;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 600;
+        color: #a0acb3;
     }
     ul.my-contact{
         li {
@@ -26,15 +27,17 @@
             font-size: 22px;
 
             a {
-                color: #35277a;
+                color: #9db4ef;
             }
         }
     }
 
+
+
     div.links {
         margin-top: 14px;
         a {
-            color: #35277a;
+            color: #d0ece6;
             margin: 2px 12px;
         }
     }
@@ -48,11 +51,13 @@
         justify-content: center;
         a {
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             margin: 12px 8px;
         }
     }
 }
+
+
 
 
 @media screen and (max-width: 600px) {

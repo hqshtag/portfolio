@@ -32,7 +32,7 @@ function setSoundPos(pos) {
 
 const introOps = {
   strings: [
-    `Hello^60,^120 My Name is Mohamed Wajih Tagourty. 🖐`,
+    `Hey^80,^120 My Name is Mohamed Wajih Tagourty. 🖐`,
     `You can address me as <strong>Mohamed</strong> or <strong>Wajih</strong>. ^600\n You can also call me <b>hqshtag</b>^70,^130 that's my alias. 👾`,
     `I'm looking forward to getting to know you and I appreciate your interest,^300 Thanks^50!`,
   ],
