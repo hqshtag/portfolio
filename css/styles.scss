@@ -39,6 +39,14 @@ body {
   }
 }
 
+#particles-js {
+  top: 0;
+  position: absolute;
+  width: 100vw;
+   height: 100vh;
+  z-index: 1;
+}
+
 
 
 @media screen and (max-width: 600px) {
@@ -59,12 +67,14 @@ body {
    position: absolute;
    width: 100vw;
    height: 100vh;
-   background-color: #1E1E1E;
+  // background-color: #1E1E1E;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
   
+   z-index: 5;
+
    h3 {
      text-align: center;
     color: white;

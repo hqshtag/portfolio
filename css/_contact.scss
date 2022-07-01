@@ -8,6 +8,8 @@
     align-items: center;
     opacity: 0;
     transition: all 1280ms ease-in-out;
+
+    z-index: 2;
     &.showup {
         opacity: 1;
         transform:translateY(-255px);
