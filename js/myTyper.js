@@ -33,7 +33,7 @@ function setSoundPos(pos) {
 const introOps = {
   strings: [
     `Hey^80,^120 My Name is Mohamed Wajih Tagourty. 🖐`,
-    `You can address me as <strong>Mohamed</strong> or <strong>Wajih</strong>. ^600\n You can also call me <b>hqshtag</b>^70,^130 that's my alias. 👾`,
+    `You can address me as <strong>Mohamed</strong> or <strong>Wajih</strong>. ^600\n You can also call me <b>hqshtag</b>^70,^130 which's my alias. 👾`,
     `I'm looking forward to getting to know you and I appreciate your interest,^300 Thanks^50!`,
   ],
   typeSpeed: 30,
@@ -73,7 +73,6 @@ $(() => {
   console.log("I'll really appreciate your feedback");
   $(document).on("SOUND_LOADED", () => {
     $(".fulldisplaybutton").on("click", () => {
-      console.log("on");
       //keystrokeSound.play();
       $(".fulldisplaybutton").fadeOut();
       $("#playBtn").hide();
