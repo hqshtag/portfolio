@@ -5,13 +5,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 0;
 }
 .hero h1, .hero h2 {
   margin: 76px 64px;
 }
 .hero h1.welcome-text {
+  margin-top: 18vh;
   min-height: 80px;
+  transition: all 1130ms ease-in-out;
   -webkit-animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
           animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
 }
@@ -163,6 +164,7 @@ body section {
   }
 }
 .fulldisplaybutton {
+  top: 0;
   position: absolute;
   width: 100vw;
   height: 100vh;
