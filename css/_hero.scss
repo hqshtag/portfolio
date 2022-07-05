@@ -8,9 +8,10 @@
     h1,h2{
         margin: 76px 64px;
     }
-    margin-top: 0;
     h1.welcome-text {
+      margin-top: 18vh;
       min-height: 80px;
+      transition: all 1130ms ease-in-out;
       animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
     }
   

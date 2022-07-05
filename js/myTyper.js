@@ -86,6 +86,7 @@ $(() => {
 
   $(document).on("TYPING_COMPLETE", () => {
     $("section.contact").addClass("showup");
+    $("h1.welcome-text").css('margin-top', "0");
 
     console.timeEnd("TYPING DURATION");
   });
