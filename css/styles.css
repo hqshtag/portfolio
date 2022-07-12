@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Voces&display=swap");
 .hero {
   z-index: 3;
   display: flex;
@@ -98,6 +98,14 @@ section.skills span.titles {
   color: #d0ece6;
   margin: 2px 12px;
 }
+.contact div.links a img {
+  height: 64px;
+  width: 64px;
+  transition: all 420ms ease-in-out;
+}
+.contact div.links a img:hover {
+  filter: saturate(1.8);
+}
 .contact a {
   text-decoration: none;
 }
@@ -115,6 +123,10 @@ section.skills span.titles {
   .contact.showup {
     transform: translateY(-200px);
   }
+  .contact div.links a > img {
+    height: 50px;
+    width: 50px;
+  }
 }
 * {
   margin: 0;
@@ -123,7 +135,7 @@ section.skills span.titles {
 
 body {
   overflow: hidden;
-  font-family: "Ubuntu Mono", monospace;
+  font-family: "Voces", cursive;
   color: #d8e3e8;
   background-color: #1E1E1E;
 }
@@ -179,10 +191,11 @@ body section {
   color: white;
   font-size: 34px;
   font-weight: 400;
-  margin-bottom: 12px;
 }
 .fulldisplaybutton p {
-  font-size: 22px;
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
   color: #CCC;
 }
 .fulldisplaybutton .avatar-wrapper {
