@@ -41,6 +41,16 @@
         a {
             color: #d0ece6;
             margin: 2px 12px;
+            img {
+                height: 64px;
+                width: 64px;
+
+                transition: all 420ms ease-in-out;
+
+                &:hover {
+                    filter: saturate(1.8);
+                }
+            }
         }
     }
 
@@ -68,7 +78,13 @@
        &.showup {
             transform:translateY(-200px);
        }
-      
+      div.links {
+
+     a > img {
+            height: 50px;
+            width: 50px;
+      }
+    }
    }
    
    }

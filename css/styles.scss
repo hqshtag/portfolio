@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Voces&display=swap');
 
 @import "./hero";
 @import './skills';
@@ -13,9 +12,8 @@
 
 body {
   overflow: hidden;
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Voces', cursive;
   color: #d8e3e8;
-
   background-color: #1E1E1E;
 
   h1 {
@@ -81,11 +79,13 @@ body {
     color: white;
     font-size: 34px;
     font-weight: 400;
-    margin-bottom: 12px;
+    //margin-bottom: 12px;
    }
 
    p {
-    font-size: 22px;
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
     color: #CCC;
    }
    .avatar-wrapper{
