@@ -3,7 +3,7 @@
 @import './skills';
 @import "./sercives";
 @import "./contact";
-
+@import "./spinner";
 * {
   margin: 0;
   padding: 0;
@@ -91,22 +91,29 @@ span.highlight {
   
    z-index: 5;
 
-   h3 {
-    animation: fadeIn 1s;
-     text-align: center;
-    color: white;
-    font-size: 34px;
-    font-weight: 400;
-    //margin-bottom: 12px;
+   .notice {
+    text-align: center;
+    h3 {
+      opacity: 0;
+       text-align: center;
+      color: white;
+      font-size: 34px;
+      font-weight: 400;
+      //margin-bottom: 12px;
+      transition: opacity 2000ms 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+     }
+  
+     p {
+      opacity: 0;
+      font-size: 14px;
+      font-weight: 200;
+      font-style: italic;
+      color: #CCC;
+      transition: opacity 2800ms 880ms cubic-bezier(0.075, 0.82, 0.165, 1);
+     }
    }
 
-   p {
-    animation: fadeIn 4s;
-    font-size: 14px;
-    font-weight: 200;
-    font-style: italic;
-    color: #CCC;
-   }
    .avatar-wrapper{
      background-color: #0B043A;
     margin-top: 150px;

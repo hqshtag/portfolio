@@ -14,6 +14,7 @@ const hideElement = (element) => {
   element.classList.remove("showup");
 };
 
+
 /* const handleScrollAnimation = () => {
   scrollElements.forEach((el) => {
     if (elementInView(el, 100)) {

@@ -12,7 +12,25 @@ keystrokeSound.addEventListener("canplaythrough", (event) => {
   /* the audio is now playable; play it if permissions allow */
 
   document.dispatchEvent(soundLoaded);
+  $('.notice>p').css('opacity', '1');
+  $(".loading-screen").css('desplay', 'none');
+
 });
+
+keystrokeSound.addEventListener('canplay', (event)=> {
+  $(".loading-screen").delay(250).queue(function(){
+  //  $(this).css('display', 'none');
+  $(this).css('opacity','0');
+
+    $(this).dequeue();
+
+    $('.notice>h3').css('opacity', '1');
+
+
+});
+
+
+})
 
 function playSound() {
   if (typeof keystrokeSound.loop == "boolean") {
@@ -72,6 +90,13 @@ $(() => {
   console.log("Let's get in touche, and develop something together 🤝 ");
   console.log("I'll really appreciate your feedback");
   $(document).on("SOUND_LOADED", () => {
+
+    $("body").keypress(function(e) {
+      $(".fulldisplaybutton").fadeOut();
+      $("#playBtn").hide();
+      new Typed(".welcome-text", introOps);
+    });
+    
     $(".fulldisplaybutton").on("click", () => {
       //keystrokeSound.play();
       $(".fulldisplaybutton").fadeOut();
@@ -102,7 +127,7 @@ function procedeureDanimation(){
   setTimeout(function() {
     $("h1.welcome-text").css('margin-top', "0");
     $("h1.welcome-text").css("opacity", "0");
-   }, 3000);
+   }, 2000);
   //display the name title header
   setTimeout(function() {
     $("div#IdHeader").css("top", "3rem");
