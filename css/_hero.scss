@@ -1,10 +1,50 @@
 
+
 .hero {
     z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    div#IdHeader {
+      position: absolute;
+      top: -1000px;
+      
+      margin: 8px 64px;
+
+      transition: all 1500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      #name {
+        opacity: 0;
+        font-size: 3.4rem;
+        transition: opacity 800ms ease-in-out 1s;
+      }
+      #title {
+        opacity: 0;
+        font-size: 2.2rem;
+        color: #7000FF;
+        letter-spacing: 1px;
+        transition: opacity 800ms ease-in-out 1800ms;
+      }
+
+      #description {
+        opacity: 0;
+        font-family:  'Roboto Mono', monospace;;
+        font-size: 1.6rem;
+        font-weight: 200;
+        font-style: italic;
+        transition: opacity 800ms ease-in-out 2600ms;
+
+        margin-right: 150px;
+
+      }
+
+      span.highlight-2 {
+        color: #ffffff;
+        font-size: 1.61rem;
+       }
+    }
+
     h1,h2{
         margin: 76px 64px;
     }
@@ -12,7 +52,7 @@
       margin-top: 18vh;
       min-height: 80px;
       transition: all 1130ms ease-in-out;
-      animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
+     // animation: scaleDownFontSize 2000ms ease-in 3000ms forwards;
     }
   
     p.hero-p {
@@ -32,11 +72,27 @@
     }
   }
 
+  
+
  
   @media screen and (max-width: 600px) {
     .hero {
+
+      div#IdHeader{
+        margin: auto 30px;
+        #name {
+          font-size: 2.2rem;
+        }
+        #title {
+          font-size: 1.8rem;
+        }
+        #description {
+          font-size: 1.4rem;
+          margin-right: 30px;
+        }
+      }
         h1,h2{
-            margin: 24px 24px;
+            margin: 24px 30px;
         }
     }
   }

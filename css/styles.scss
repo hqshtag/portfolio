@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Voces&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&family=Voces&display=swap');
 @import "./hero";
 @import './skills';
 @import "./sercives";
@@ -47,17 +46,35 @@ body {
 
 
 
+
+
+span.highlight {
+  color: #7000FF;
+  font-size: 3.6rem;
+ }
+
+
+
 @media screen and (max-width: 600px) {
 
   body {  h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   h2 {
     font-size: 1.4rem;
   }
   p, li {
     font-size: 1rem;
-  } }
+  }
+  section {
+    margin: 3.6rem auto;
+  }
+}
+
+  span.highlight {
+    color: #7000FF;
+    font-size: 2.20rem;
+   }
  
  }
 
@@ -75,6 +92,7 @@ body {
    z-index: 5;
 
    h3 {
+    animation: fadeIn 1s;
      text-align: center;
     color: white;
     font-size: 34px;
@@ -83,6 +101,7 @@ body {
    }
 
    p {
+    animation: fadeIn 4s;
     font-size: 14px;
     font-weight: 200;
     font-style: italic;
@@ -117,9 +136,16 @@ body {
 
 
 
+
 span.typed-cursor{
   display: none;
   opacity: 0;
   visibility: hidden;
 }
 
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

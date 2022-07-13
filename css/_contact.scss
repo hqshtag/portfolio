@@ -12,13 +12,13 @@
     z-index: 2;
     &.showup {
         opacity: 1;
-        transform:translateY(-255px);
+        transform:translateY(-200px);
     }
 
 
     h2.h-question {
         text-align: center;
-        font-size: 30px;
+        font-size: 2rem;
         font-weight: 600;
         color: #a0acb3;
     }
@@ -78,6 +78,9 @@
        &.showup {
             transform:translateY(-200px);
        }
+       h2.h-question {
+        font-size: 1.6rem;
+    }
       div.links {
 
      a > img {
