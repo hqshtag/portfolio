@@ -1,0 +1,15 @@
+
+
+
+.loading-screen {
+    position: absolute;
+    background-color: rgb(16, 16, 16);
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 0.6;
+
+    transition: opacity 3s  cubic-bezier(.93,.28,1,.82);
+
+    z-index: 100;
+}
