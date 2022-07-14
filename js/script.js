@@ -27,6 +27,114 @@ $(() => {
     $("div#IdHeader>#title").css("opacity", "1");
     $("div#IdHeader>#description").css("opacity", "1");
 
-    $("div#IdHeader>.actions").addClass("appear");
+    $("div.actions").addClass("appear");
   }
+
+  $('#messageMe').on('click', (event)=>{
+    event.preventDefault();
+    $('#myModal').addClass('show');
+
+    return false;
+  })
+
+  $('#cancelMessage').on('click', (event)=>{
+    event.preventDefault();
+    $('#myModal').removeClass('show');
+
+    return false;
+  })
+
+
+  let form = document.getElementById("contact-me-form");
+    
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    let data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        new SnackBar({
+          message: "Message Sent!",
+          timeout: 1500,
+          status: "info",
+          position: isMobile ? 'bc' : 'br',
+          width: isMobile && '80vw'
+
+        });
+
+        setTimeout(()=>{
+          new SnackBar({
+            message: "Thanks for reaching out!",
+            timeout: 1800,
+            position: isMobile ? 'bc' : 'br',
+            width: isMobile && '80vw'
+
+          });
+        }, 2000)
+
+        setTimeout(()=>{
+          new SnackBar({
+            message: "I shall contact you soon!",
+            timeout: 2200,
+            position: isMobile ? 'bc' : 'br',
+            width: isMobile && '80vw'
+
+          });
+        }, 3000)
+
+        form.reset()
+        $('#myModal').removeClass('show');
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            let err = data["errors"].map(error => error["message"]).join(", ");            
+            new SnackBar({
+              message: err,
+              status: "warning",
+              timeout: 2000,
+              position: isMobile ? 'bc' : 'br',
+              width: isMobile && '80vw'
+
+
+            });
+            
+          } else {
+            new SnackBar({
+              message: "Oops! There was a problem submitting your form",
+              status: "error",
+              timeout: 2000,
+              position: isMobile ? 'bc' : 'br',
+              width: isMobile && '80vw'
+
+
+          });
+         
+          }
+        })
+      }
+    }).catch(error => {
+      new SnackBar({
+        message: "Oops! There was a problem submitting your form",
+        status: "error",
+        timeout: 2000,
+        position: isMobile ? 'bc' : 'br',
+        width: isMobile && '80%'
+
+    });
+    });
+  }
+
+
+
+
+
+
+  form.addEventListener("submit", handleSubmit)
 })

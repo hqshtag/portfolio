@@ -1,4 +1,174 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&family=Voces&display=swap");
+.js-snackbar-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 100%;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.js-snackbar-container--top-left {
+  bottom: unset;
+  right: unset;
+  top: 0;
+  left: 0;
+}
+
+.js-snackbar-container--top-center {
+  top: 0;
+  bottom: unset;
+  left: 50%;
+  right: unset;
+  transform: translateX(-50%);
+}
+
+.js-snackbar-container--top-right {
+  bottom: unset;
+  right: 0;
+  left: unset;
+  top: 0;
+}
+
+.js-snackbar-container--bottom-left {
+  bottom: 0;
+  right: unset;
+  left: 0;
+  top: unset;
+}
+
+.js-snackbar-container--bottom-center {
+  bottom: 0;
+  right: unset;
+  left: 50%;
+  top: unset;
+  transform: translateX(-50%);
+}
+
+.js-snackbar-container--fixed {
+  position: fixed;
+}
+
+.js-snackbar-container * {
+  box-sizing: border-box;
+}
+
+.js-snackbar__wrapper {
+  overflow: hidden;
+  height: auto;
+  margin: 0;
+  border-radius: 3px;
+  display: flex;
+  min-width: auto;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+
+.js-snackbar {
+  display: inline-flex;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #eee;
+  font-size: 16px;
+  background-color: #262626;
+  vertical-align: bottom;
+  box-shadow: 0 0 4px 0 black;
+  margin: 0 10px;
+  flex-grow: 1;
+}
+
+.js-snackbar__close,
+.js-snackbar__status,
+.js-snackbar__message-wrapper {
+  position: relative;
+}
+
+.js-snackbar__message-wrapper {
+  flex: 1;
+  padding: 12px;
+}
+
+.js-snackbar__message {
+  display: inline-block;
+}
+
+.js-snackbar__status {
+  display: none;
+  min-width: 15px;
+  margin-right: 5px;
+  border-radius: 3px 0 0 3px;
+  background-color: transparent;
+}
+
+.js-snackbar__status.js-snackbar--success,
+.js-snackbar__status.js-snackbar--warning,
+.js-snackbar__status.js-snackbar--danger,
+.js-snackbar__status.js-snackbar--info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.js-snackbar__status.js-snackbar--success {
+  background-color: #4caf50;
+}
+
+.js-snackbar__status.js-snackbar--warning {
+  background-color: #ff9800;
+}
+
+.js-snackbar__status.js-snackbar--danger {
+  background-color: #b90909;
+}
+
+.js-snackbar__status.js-snackbar--info {
+  background-color: #2196f3;
+}
+
+.js-snackbar__icon {
+  display: block;
+  border: 2px solid white;
+  font-weight: bold;
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  margin: 0 5px;
+  font-family: monospace;
+}
+
+.js-snackbar__action {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: #838cff;
+  cursor: pointer;
+}
+
+.js-snackbar__action:hover {
+  background-color: #333;
+}
+
+.js-snackbar__close {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #BBB;
+}
+
+.js-snackbar__close:hover {
+  background-color: #444;
+}
+
 .hero {
   z-index: 3;
   display: flex;
@@ -59,6 +229,25 @@
   color: whitesmoke;
 }
 
+@media screen and (max-width: 1188px) {
+  .hero div#IdHeader #description {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 796px) {
+  .hero div#IdHeader #name {
+    font-size: 2.2rem;
+  }
+  .hero div#IdHeader #title {
+    font-size: 1.8rem;
+  }
+  .hero div#IdHeader #description {
+    font-size: 1.2rem;
+  }
+  .hero div#IdHeader span.highlight-2 {
+    font-size: 1.3rem;
+  }
+}
 @media screen and (max-width: 600px) {
   .hero div#IdHeader {
     margin: auto 30px;
@@ -72,14 +261,6 @@
   .hero div#IdHeader #description {
     font-size: 1rem;
     margin-right: auto;
-  }
-  .hero div#IdHeader div.actions {
-    width: 100%;
-    margin-top: 30px;
-    flex-direction: column-reverse;
-  }
-  .hero div#IdHeader div.actions a {
-    width: 94%;
   }
   .hero div#IdHeader span.highlight-2 {
     font-size: 1.1rem;
@@ -200,6 +381,297 @@ section.skills span.titles {
   z-index: 100;
 }
 
+div.actions {
+  position: absolute;
+  bottom: 30vh;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 650ms ease-in 3s, bottom 800ms ease;
+}
+div.actions.appear {
+  opacity: 1;
+}
+div.actions button {
+  height: 70px !important;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+div.actions a, div.actions button {
+  cursor: pointer;
+  width: 360px;
+  height: 54px;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #7000FF;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+  position: relative;
+  margin: 10px 0;
+}
+div.actions a.righto span.bg, div.actions button.righto span.bg {
+  left: unset;
+  right: -5%;
+  position: absolute;
+  background: #7000FF;
+  width: 0;
+  height: 100%;
+  z-index: 3;
+  transition: 0.3s ease-out all;
+  transform: skewX(-10deg);
+}
+div.actions a.white:hover > p, div.actions button.white:hover > p {
+  color: #ece8e1;
+}
+div.actions a.white > p, div.actions button.white > p {
+  background: #ece8e1;
+  color: #0f1923;
+}
+div.actions a.white > p span.base, div.actions button.white > p span.base {
+  border: 1px solid transparent;
+}
+div.actions a.transparent:hover > p, div.actions button.transparent:hover > p {
+  color: #ece8e1;
+}
+div.actions a.transparent:hover > p span.text, div.actions button.transparent:hover > p span.text {
+  box-shadow: 0 0 0 1px #ece8e1;
+}
+div.actions a.transparent > p, div.actions button.transparent > p {
+  background: #0f1923;
+  color: #ece8e1;
+}
+div.actions a.transparent > p span.base, div.actions button.transparent > p span.base {
+  border: 1px solid #ece8e1;
+}
+div.actions a:after, div.actions a:before, div.actions button:after, div.actions button:before {
+  content: "";
+  width: 1px;
+  position: absolute;
+  height: 8px;
+  background: #0f1923;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+div.actions a:before, div.actions button:before {
+  right: 0;
+  left: initial;
+}
+div.actions a p, div.actions button p {
+  margin: 0;
+  height: 54px;
+  line-height: 54px;
+  color: rgb(176, 176, 176);
+  box-sizing: border-box;
+  font-size: 1.3rem;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: color 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+div.actions a p:hover, div.actions button p:hover {
+  color: #fff;
+}
+div.actions a p span.base, div.actions button p span.base {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border: 1px solid #7000FF;
+}
+div.actions a p span.base:before, div.actions button p span.base:before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  left: -1px;
+  top: -1px;
+  background: #0f1923;
+  position: absolute;
+  transition: 0.3s ease-out all;
+}
+div.actions a p span.bg, div.actions button p span.bg {
+  left: -5%;
+  position: absolute;
+  background: #7000FF;
+  width: 0;
+  height: 100%;
+  z-index: 3;
+  transition: 0.3s ease-out all;
+  transform: skewX(-10deg);
+}
+div.actions a p span.text, div.actions button p span.text {
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+div.actions a p span.text:after, div.actions button p span.text:after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  right: 0;
+  bottom: 0;
+  background: #0f1923;
+  position: absolute;
+  transition: 0.3s ease-out all;
+  z-index: 5;
+}
+div.actions a:hover, div.actions button:hover {
+  color: #ece8e1;
+}
+div.actions a:hover span.bg, div.actions button:hover span.bg {
+  width: 110%;
+}
+div.actions a:hover span.text:after, div.actions button:hover span.text:after {
+  background: #ece8e1;
+}
+
+@media screen and (max-width: 1024px) {
+  div.actions {
+    bottom: 18vh;
+    justify-content: space-evenly;
+  }
+  div.actions a {
+    width: calc(50vw - 110px);
+    height: 52px;
+  }
+}
+@media screen and (max-width: 600px) {
+  div.actions {
+    bottom: 14vh;
+    width: 100%;
+    margin-top: 30px;
+    flex-direction: column-reverse;
+  }
+  div.actions a {
+    width: 280px;
+    height: 48px;
+  }
+  div.actions button {
+    width: 80%;
+    height: 52px;
+  }
+}
+#myModal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.78);
+  transition: all 480ms ease-in-out;
+  z-index: 9;
+}
+#myModal.show {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+#myModal .modal-wrapper {
+  margin: auto;
+  width: 48vw;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 499;
+  padding: 8px;
+}
+#myModal .modal-wrapper .modal-header {
+  width: 100%;
+  border-bottom: 1px solid #1e1e1e;
+}
+#myModal .modal-wrapper .modal-header h2 {
+  text-align: center;
+  color: #575757;
+  margin-bottom: 8px;
+}
+#myModal .modal-wrapper .modal-content {
+  width: 94%;
+  margin: 8px;
+}
+#myModal .modal-wrapper .modal-content input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+#myModal .modal-wrapper .modal-content input:focus {
+  border-bottom: 2px solid #78788c;
+}
+#myModal .modal-wrapper .modal-content p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+#myModal .modal-wrapper .modal-content button {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 5px 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+#myModal .modal-wrapper .modal-content button:hover {
+  background: #58565b;
+  color: #fff;
+}
+#myModal .modal-wrapper .modal-footer {
+  width: 100%;
+}
+#myModal .modal-wrapper .modal-footer div {
+  content: "Hi";
+  position: absolute;
+  bottom: -1px;
+  width: 48vw;
+  margin: auto;
+  background: #353535;
+  color: #fff;
+  padding: 16px 2px 16px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 10px 10px 40px -14px #000;
+}
+#myModal .modal-wrapper .modal-footer span {
+  margin: 0 5px 0 15px;
+}
+
+@media screen and (max-width: 600px) {
+  #myModal .modal-wrapper {
+    margin-top: 5rem;
+    width: 78vw;
+  }
+}
 main.explore-m {
   background-color: #1E1E1E;
   color: white;
@@ -253,6 +725,9 @@ span.highlight {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    overflow-y: scroll;
+  }
   body h1 {
     font-size: 2rem;
   }
@@ -331,157 +806,6 @@ span.typed-cursor {
   visibility: hidden;
 }
 
-div.actions {
-  margin-top: 80px;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 650ms ease-in 3s;
-}
-div.actions.appear {
-  opacity: 1;
-}
-div.actions a {
-  width: 280px;
-  height: 48px;
-  padding: 8px;
-  font-size: 0.8rem;
-  font-weight: 900;
-  color: #7000FF;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
-  position: relative;
-  margin: 10px 0;
-}
-div.actions a.righto span.bg {
-  left: unset;
-  right: -5%;
-  position: absolute;
-  background: #7000FF;
-  width: 0;
-  height: 100%;
-  z-index: 3;
-  transition: 0.3s ease-out all;
-  transform: skewX(-10deg);
-}
-div.actions a.white:hover > p {
-  color: #ece8e1;
-}
-div.actions a.white > p {
-  background: #ece8e1;
-  color: #0f1923;
-}
-div.actions a.white > p span.base {
-  border: 1px solid transparent;
-}
-div.actions a.transparent:hover > p {
-  color: #ece8e1;
-}
-div.actions a.transparent:hover > p span.text {
-  box-shadow: 0 0 0 1px #ece8e1;
-}
-div.actions a.transparent > p {
-  background: #0f1923;
-  color: #ece8e1;
-}
-div.actions a.transparent > p span.base {
-  border: 1px solid #ece8e1;
-}
-div.actions a:after, div.actions a:before {
-  content: "";
-  width: 1px;
-  position: absolute;
-  height: 8px;
-  background: #0f1923;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-div.actions a:before {
-  right: 0;
-  left: initial;
-}
-div.actions a p {
-  margin: 0;
-  height: 48px;
-  line-height: 48px;
-  color: rgb(176, 176, 176);
-  box-sizing: border-box;
-  font-size: 1.3rem;
-  z-index: 1;
-  left: 0;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: color 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-div.actions a p:hover {
-  color: #fff;
-}
-div.actions a p span.base {
-  box-sizing: border-box;
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  border: 1px solid #7000FF;
-}
-div.actions a p span.base:before {
-  content: "";
-  width: 2px;
-  height: 2px;
-  left: -1px;
-  top: -1px;
-  background: #0f1923;
-  position: absolute;
-  transition: 0.3s ease-out all;
-}
-div.actions a p span.bg {
-  left: -5%;
-  position: absolute;
-  background: #7000FF;
-  width: 0;
-  height: 100%;
-  z-index: 3;
-  transition: 0.3s ease-out all;
-  transform: skewX(-10deg);
-}
-div.actions a p span.text {
-  z-index: 4;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-div.actions a p span.text:after {
-  content: "";
-  width: 4px;
-  height: 4px;
-  right: 0;
-  bottom: 0;
-  background: #0f1923;
-  position: absolute;
-  transition: 0.3s ease-out all;
-  z-index: 5;
-}
-div.actions a:hover {
-  color: #ece8e1;
-}
-div.actions a:hover span.bg {
-  width: 110%;
-}
-div.actions a:hover span.text:after {
-  background: #ece8e1;
-}
-
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -498,4 +822,11 @@ div.actions a:hover span.text:after {
   100% {
     opacity: 1;
   }
+}
+#snacks {
+  height: 500px;
+  width: 500px;
+  left: 10px;
+  bottom: 100px;
+  outline: 1px solid red;
 }/*# sourceMappingURL=styles.css.map */

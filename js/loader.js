@@ -1,4 +1,4 @@
-let dev = false;
+let dev = true;
 
 function loadScript(url) {
 	return new Promise(function(resolve, reject) {
@@ -19,6 +19,7 @@ let scripts = [
 				'jquery.min.js',
 				'particles.min.js',
                 'jquery.color.min.js',
+                'js-snackbar.js',
                 'm-pagetransition.js',
 				'myTyper.js',
                 'myparticles.js',

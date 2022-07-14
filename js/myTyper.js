@@ -157,7 +157,7 @@ function procedeureDanimation(){
     $("div#IdHeader>#title").css("opacity", "1");
     $("div#IdHeader>#description").css("opacity", "1");
 
-    $("div#IdHeader>.actions").addClass("appear");
+    $("div.actions").addClass("appear");
   }, 3000);
 
 
