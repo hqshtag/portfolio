@@ -1,5 +1,5 @@
 //this a free keyboard typing sound effects
-const prod = true;
+let prod = true;
 const keystrokeSound = new Audio(
   prod ? "./assets/keytap.mp3" : "../assets/keytap.mp3"
 );
