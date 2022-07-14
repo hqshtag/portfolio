@@ -1,4 +1,3 @@
-const prod = true;
 
 function loadScript(url) {
 	return new Promise(function(resolve, reject) {
