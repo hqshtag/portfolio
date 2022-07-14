@@ -1,4 +1,4 @@
-let prod = true;
+let dev = false;
 
 function loadScript(url) {
 	return new Promise(function(resolve, reject) {
@@ -30,7 +30,7 @@ let promises = [];
 
 let animationDone = localStorage.getItem('typingAnimationDone');
 let loadedscripts = [];
-let prefix = prod ? "/portfolio/js/" : "/js/"
+let prefix = !dev ? "/portfolio/js/" : "/js/"
 
 scripts.forEach(function(url) {
     if(url !== 'myTyper.js' || animationDone !== "true"){
