@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
     <title>  Mohamed Wajih "Hqshtag" Tagourty's Portfolio </title>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 
@@ -42,18 +42,19 @@
             <p id="description">Senior <span class="highlight-2" />Full-stack Web developer</span>. Certified <span
                     class="highlight-2" />Analyst Programmer</span> and <span class="highlight-2" />Mobile Applications</span>
                 Developer. Expert with <span class="highlight-2">Javascript, ReactJs & Node</span>.
-
-           <!--  <div class="actions">
-                <a href="#">
-                    <p><span class="bg"></span><span class="base"></span><span class="text">Send a note</span></p>
-                </a>
-                <a class="white" href="./pages/explore.html">
-                    <p><span class="bg"></span><span class="base"></span><span class="text">Explore ➔</span></p>
-                </a>
-            </div> -->
         </div>
 
         <h1 class="welcome-text"></h1>
+
+
+        <div class="actions">
+            <button  id="messageMe">
+                <p><span class="bg"></span><span class="base"></span><span class="text">Message me</span></p>
+            </button>
+           <!--  <a class="white" href="./pages/explore.html">
+                <p><span class="bg"></span><span class="base"></span><span class="text">Explore ➔</span></p>
+            </a> -->
+        </div> 
 
     </section>
 
@@ -82,6 +83,33 @@
 
 
     </main>
+
+
+    <div id="myModal">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h2>• Stay in Touch •</h2>
+            </div>
+            <div class="modal-content">
+                <form id="contact-me-form" class="form" action="https://formspree.io/f/xlezyyjd" method="POST">
+                    <p type="Name:"><input autocomplete="off" placeholder="Write your name here.." name="name"></p>
+                    <p type="Email:"><input  placeholder="Let me know how to reach you back.." name="email"></p>
+                    <p type="Message:"><input autocomplete="off" placeholder="Your message.." name="message"></p>
+                  
+                    <button type="submit" id="sendMeMsg">Send Message</button>
+                    <button id="cancelMessage">Cancel</button>
+                  </form>
+            </div>
+    
+            <div class="modal-footer">
+                  
+   
+             
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div id="particles-js"></div>

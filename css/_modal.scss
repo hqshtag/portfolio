@@ -1,0 +1,139 @@
+#myModal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+
+    top: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.78);
+
+
+    transition: all 480ms ease-in-out;
+    z-index: 9;
+
+    &.show {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    & .modal-wrapper {
+        margin: auto;
+
+        width: 48vw;
+
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 499;
+
+        padding: 8px;
+
+        & .modal-header {
+            width: 100%;
+
+            h2 {
+                text-align: center;
+                color: #575757;
+                margin-bottom: 8px;
+            }
+
+            border-bottom: 1px solid #1e1e1e;
+        }
+
+        & .modal-content {
+            width: 94%;
+            margin: 8px;
+            input {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background: none;
+                outline: none;
+                resize: none;
+                border: 0;
+                font-family: "Montserrat", sans-serif;
+                transition: all 0.3s;
+                border-bottom: 2px solid #bebed2;
+            }
+
+            input:focus {
+                border-bottom: 2px solid #78788c;
+            }
+
+            p:before {
+                content: attr(type);
+                display: block;
+                margin: 28px 0 0;
+                font-size: 14px;
+                color: #5a5a5a;
+            }
+
+            
+            button {
+                float: right;
+                padding: 8px 12px;
+                margin: 8px 5px 0;
+                font-family: "Montserrat", sans-serif;
+                border: 2px solid #78788c;
+                background: 0;
+                color: #5a5a6e;
+                cursor: pointer;
+                transition: all 0.3s ease-out;
+            }
+
+            button:hover {
+                background: #58565b;
+                color: #fff;
+            }
+
+
+
+        }
+
+        & .modal-footer {
+            width: 100%;
+            
+           
+
+            div {
+                content: "Hi";
+                position: absolute;
+                bottom: -1px;
+                width: 48vw;
+                margin: auto;
+                background: #353535;
+                color: #fff;
+                padding: 16px 2px 16px 0;
+                border-radius: 6px;
+                font-size: 14px;
+                box-shadow: 10px 10px 40px -14px #000;
+            }
+
+            span {
+                margin: 0 5px 0 15px;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #myModal {
+        & .modal-wrapper {
+            margin-top: 5rem;
+            width: 78vw;
+        }
+
+    }
+}
