@@ -1,3 +1,5 @@
+const prod = true;
+
 function loadScript(url) {
 	return new Promise(function(resolve, reject) {
 		let script = document.createElement('script');
@@ -28,10 +30,11 @@ let promises = [];
 
 let animationDone = localStorage.getItem('typingAnimationDone');
 let loadedscripts = [];
+let prefix = prod ? "/portfolio/js/" : "/js/"
 
 scripts.forEach(function(url) {
     if(url !== 'myTyper.js' || animationDone !== "true"){
-        promises.push(loadScript(`/js/${url}`));
+        promises.push(loadScript(`${prefix}${url}`));
         loadedscripts.push(url);
     }
 });
