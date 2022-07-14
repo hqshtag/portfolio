@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>Hqshtag's Universe</title>
+</head>
+<body class="m-pagetransition">
+    <main class="explore-m">
+        <div class="actions">
+            <a class="white righto" href="../index.html">
+                <p><span class="bg"></span><span class="base"></span><span class="text"><span id="invDirection">➔ </span>Go Back </span></p>
+            </a>
+        </div>
+
+    </main>
+    <div id="particles-js"></div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/m-pagetransition.js"></script>
+    <script src="../js/particles.min.js"></script>
+    <script src="../js/myparticles.js"></script>
+
+    <script>
+        
+$(() => {
+
+  $('body').mPageTransition({
+
+    // the color valuethat the page will fade to
+    color: "#722ACD",
+  
+    // animation speed in milliseconds
+    fadeOutTime: 300,
+    fadeInTime: 300
+  
+  });
+
+
+  $(".explore-m>.actions").addClass("appear");
+
+});
+    </script>
+</body>
+</html>

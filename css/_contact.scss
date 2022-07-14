@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: all 1280ms ease-in-out;
+    transition: all 1s ease-in-out 4s;
 
     z-index: 2;
     &.showup {
@@ -76,16 +76,17 @@
 
    .contact {
        &.showup {
-            transform:translateY(-200px);
+            transform:translateY(-204px);
        }
        h2.h-question {
-        font-size: 1.6rem;
+        letter-spacing: 0.41px;
+        font-size: 1.2rem;
     }
       div.links {
-
+        margin: 6px auto;
      a > img {
-            height: 50px;
-            width: 50px;
+            height: 44px;
+            width: 44px;
       }
     }
    }
