@@ -185,7 +185,7 @@
 .hero div#IdHeader #name {
   opacity: 0;
   font-size: 3.4rem;
-  transition: opacity 800ms ease-in-out 1s;
+  transition: opacity 800ms ease-in-out 200ms;
 }
 .hero div#IdHeader #title {
   opacity: 0;
