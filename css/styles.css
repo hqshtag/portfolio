@@ -675,6 +675,8 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
 main.explore-m {
   background-color: #1E1E1E;
   color: white;
+  height: 3580px;
+  width: 2550px;
 }
 
 span#invDirection {
@@ -714,8 +716,8 @@ body section {
 #particles-js {
   top: 0;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  height: 3580px;
+  width: 2550px;
   z-index: 0;
 }
 
