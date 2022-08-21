@@ -549,6 +549,10 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
     width: calc(50vw - 110px);
     height: 52px;
   }
+  div.actions button {
+    width: calc(50vw - 110px);
+    height: 52px;
+  }
 }
 @media screen and (max-width: 600px) {
   div.actions {
@@ -558,11 +562,11 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
     flex-direction: column-reverse;
   }
   div.actions a {
-    width: 280px;
+    width: calc(80vw - 15px);
     height: 48px;
   }
   div.actions button {
-    width: 80%;
+    width: 80vw;
     height: 52px;
   }
 }

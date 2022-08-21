@@ -209,7 +209,10 @@ div.actions {
             width: calc(50vw - 110px);
             height: 52px;
         }
-
+        & button {
+            width: calc(50vw - 110px);
+            height: 52px;
+        }
       
     }
 }
@@ -222,12 +225,13 @@ div.actions {
         flex-direction: column-reverse;
 
         & a {
-            width: 280px;
+            width: calc(80vw - 15px );
             height: 48px;
         }
 
         & button {
-            width: 80%;
+           // padding: 8px 4px;
+            width: 80vw;
             height: 52px;
         }
     }
