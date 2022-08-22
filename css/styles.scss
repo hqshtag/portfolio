@@ -10,6 +10,7 @@
 @import "./actions";
 @import "./modal";
 @import "./explore";
+@import './cards';
 
 
 
@@ -48,8 +49,8 @@ body {
 #particles-js {
   top: 0;
   position: absolute;
-  height: 3580px;
-  width: 2550px;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
 }
 
