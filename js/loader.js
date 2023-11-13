@@ -42,8 +42,26 @@ scripts.forEach(function(url) {
 
 Promise.all(promises)
 .then(function() {
-	console.log('The following scripts are loaded');
-    console.table(loadedscripts)
+	if(dev){
+		console.log('The following scripts are loaded');
+		console.table(loadedscripts)	
+	}
+
 }).catch(function(script) {
-	console.log(script + ' failed to load');
+	if(dev){
+		console.log(script + ' failed to load');
+	} else {
+		try {
+			new SnackBar({
+				message: "Something went wrong, could you please refresh the page",
+				timeout: 1500,
+				status: "warning",
+				position: isMobile ? 'bc' : 'br',
+				width: isMobile && '80vw'
+	  
+			  });
+		} catch (err) {
+			console.error(err);
+		}
+	}
 });

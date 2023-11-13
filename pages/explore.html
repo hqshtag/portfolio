@@ -10,10 +10,40 @@
 </head>
 <body class="m-pagetransition">
     <main class="explore-m">
-        <div class="actions">
+
+      <div class="cards">
+        <div class="card card-one">
+            <h2 class="card-title">Professional Journey</h2>
+            <p class="description">Driven by discipline, self-awareness, and critical thinking, I've strategically navigated my career path, achieving continuous professional growth.</p>
+        </div>
+        <div class="card card-two">
+            <h2 class="card-title">Innovative Projects</h2>
+            <p class="description">Constantly immersed in coding and IT exploration, my network is a vibrant hub of like-minded individuals. This collaboration has led to exciting development projects where I actively contribute and thrive.</p>
+        </div>
+        <div class="card card-three">
+            <h2 class="card-title">Versatile Skills</h2>
+            <p class="description">My insatiable eagerness to learn is the driving force behind my expanding skill set. Every experience is an opportunity to enhance my capabilities and contribute meaningfully.</p>
+        </div>
+        <div class="card card-four">
+            <h2 class="card-title">Passion for Education</h2>
+            <p class="description">Fueling my passion for IT from an early age, I actively seek knowledge to delve into the realms of computer sciences, fostering a continuous journey of exploration and growth.</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <!-- Add more events as needed -->
+      </div>
+    
+
+
+        <div class="actions actions-m">
+         
+
             <a class="white righto" href="../index.html">
                 <p><span class="bg"></span><span class="base"></span><span class="text"><span id="invDirection">➔ </span>Go Back </span></p>
             </a>
+
+         
         </div>
 
     </main>
@@ -23,25 +53,8 @@
     <script src="../js/particles.min.js"></script>
     <script src="../js/myparticles.js"></script>
 
-    <script>
-        
-$(() => {
-
-  $('body').mPageTransition({
-
-    // the color valuethat the page will fade to
-    color: "#722ACD",
-  
-    // animation speed in milliseconds
-    fadeOutTime: 300,
-    fadeInTime: 300
-  
-  });
+    <script src="../js/sc-explore.js"></script>
 
 
-  $(".explore-m>.actions").addClass("appear");
-
-});
-    </script>
 </body>
 </html>

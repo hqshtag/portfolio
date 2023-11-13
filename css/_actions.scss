@@ -2,6 +2,7 @@
 $base: #0f1923;
 $white: #ece8e1;
 $pink: #7000FF;
+$cyan: #00d0ff;
 $height: 54px;
 $transition: 0.3s ease-out all;
 
@@ -42,7 +43,7 @@ div.actions {
         padding: 8px;
         font-size: 0.8rem;
         font-weight: 900;
-        color: $pink;
+        color: $cyan;
         text-align: center;
         text-transform: uppercase;
         text-decoration: none;
@@ -52,11 +53,12 @@ div.actions {
        
 
         &.righto {
+            
             span.bg {
                 left: unset;
                 right: -5%;
                 position: absolute;
-                background: $pink;
+                background: darken($cyan, 22%);
                 width: 0;
                 height: 100%;
                 z-index: 3;
@@ -140,7 +142,7 @@ div.actions {
                 width: 100%;
                 height: 100%;
                 left: 0;
-                border: 1px solid $pink;
+                border: 1px solid $cyan;
 
                 &:before {
                     content: "";
@@ -157,7 +159,7 @@ div.actions {
             & span.bg {
                 left: -5%;
                 position: absolute;
-                background: $pink;
+                background: darken($cyan, 22%);
                 width: 0;
                 height: 100%;
                 z-index: 3;
@@ -209,7 +211,10 @@ div.actions {
             width: calc(50vw - 110px);
             height: 52px;
         }
-
+        & button {
+            width: calc(50vw - 110px);
+            height: 52px;
+        }
       
     }
 }
@@ -222,12 +227,13 @@ div.actions {
         flex-direction: column-reverse;
 
         & a {
-            width: 280px;
+            width: calc(80vw - 15px );
             height: 48px;
         }
 
         & button {
-            width: 80%;
+           // padding: 8px 4px;
+            width: 80vw;
             height: 52px;
         }
     }
