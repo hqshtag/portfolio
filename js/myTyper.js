@@ -93,10 +93,7 @@ $(() => {
     $(".fulldisplaybutton").fadeOut();
     console.log(typingSkipped)
     document.dispatchEvent(typingSkipped);
-  } else {
-    
   }
-
   
     
   $(document).on("SOUND_LOADED", () => {

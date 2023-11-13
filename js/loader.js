@@ -1,4 +1,4 @@
-let dev = false;
+let dev = true;
 
 function loadScript(url) {
 	return new Promise(function(resolve, reject) {
@@ -44,6 +44,7 @@ Promise.all(promises)
 .then(function() {
 	console.log('The following scripts are loaded');
     console.table(loadedscripts)
+
 }).catch(function(script) {
 	console.log(script + ' failed to load');
 });

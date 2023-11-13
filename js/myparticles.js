@@ -18,7 +18,7 @@
                     "color": "#000000"
                 },
                 "polygon": {
-                    "nb_sides": 5
+                    "nb_sides": 6
                 },
             },
             "opacity": {
@@ -78,9 +78,9 @@
             },
             "modes": {
                 "grab": {
-                    "distance": 140,
+                    "distance": 240,
                     "line_linked": {
-                        "opacity": 1
+                        "opacity": 0.7
                     }
                 },
                 "bubble": {
@@ -95,7 +95,7 @@
                     "duration": 0.4
                 },
                 "push": {
-                    "particles_nb": 4
+                    "particles_nb": 3
                 },
                 "remove": {
                     "particles_nb": 2

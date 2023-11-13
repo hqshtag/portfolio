@@ -160,7 +160,6 @@
   padding: 0 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   color: #BBB;
 }
@@ -190,7 +189,7 @@
 .hero div#IdHeader #title {
   opacity: 0;
   font-size: 2.2rem;
-  color: #7000FF;
+  color: #00d0ff;
   letter-spacing: 1px;
   transition: opacity 800ms ease-in-out 1500ms;
 }
@@ -266,7 +265,7 @@
     font-size: 1.1rem;
   }
   .hero h1,
-.hero h2 {
+  .hero h2 {
     margin: 24px 30px;
   }
 }
@@ -409,7 +408,7 @@ div.actions a, div.actions button {
   padding: 8px;
   font-size: 0.8rem;
   font-weight: 900;
-  color: #7000FF;
+  color: #00d0ff;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
@@ -421,7 +420,7 @@ div.actions a.righto span.bg, div.actions button.righto span.bg {
   left: unset;
   right: -5%;
   position: absolute;
-  background: #7000FF;
+  background: #00d0ff;
   width: 0;
   height: 100%;
   z-index: 3;
@@ -489,7 +488,7 @@ div.actions a p span.base, div.actions button p span.base {
   width: 100%;
   height: 100%;
   left: 0;
-  border: 1px solid #7000FF;
+  border: 1px solid #00d0ff;
 }
 div.actions a p span.base:before, div.actions button p span.base:before {
   content: "";
@@ -504,7 +503,7 @@ div.actions a p span.base:before, div.actions button p span.base:before {
 div.actions a p span.bg, div.actions button p span.bg {
   left: -5%;
   position: absolute;
-  background: #7000FF;
+  background: #00d0ff;
   width: 0;
   height: 100%;
   z-index: 3;
@@ -827,7 +826,7 @@ body {
   overflow: hidden;
   font-family: "Voces", cursive;
   color: #d8e3e8;
-  background-color: #1E1E1E;
+  background-color: #191637;
 }
 body h1 {
   font-size: 3.6rem;
@@ -855,7 +854,7 @@ body section {
 }
 
 span.highlight {
-  color: #7000FF;
+  color: #00d0ff;
   font-size: 3.6rem;
 }
 
@@ -876,7 +875,6 @@ span.highlight {
     margin: 3.6rem auto;
   }
   span.highlight {
-    color: #7000FF;
     font-size: 2.1rem;
   }
 }
@@ -939,15 +937,6 @@ span.typed-cursor {
 
 .m-pagetransition {
   visibility: hidden;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes fadeIn {

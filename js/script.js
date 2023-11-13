@@ -1,7 +1,7 @@
 $(() => {
   console.log("Yay, a fellow developer! 🥳");
-  console.log("Let's get in touche, and develop something together 🤝 ");
-  console.log("I'll really appreciate your feedback");
+  console.log("Let's get in touche, and code something together 🤝 ");
+  //console.log("I'll really appreciate your feedback");
 
   $('body').mPageTransition({
 
@@ -52,6 +52,7 @@ $(() => {
   async function handleSubmit(event) {
     event.preventDefault();
     let data = new FormData(event.target);
+    console.log(data);
     fetch(event.target.action, {
       method: form.method,
       body: data,
@@ -71,7 +72,7 @@ $(() => {
 
         setTimeout(()=>{
           new SnackBar({
-            message: "Thanks for reaching out!",
+            message: "Thank you for reaching out!",
             timeout: 1800,
             position: isMobile ? 'bc' : 'br',
             width: isMobile && '80vw'
@@ -79,7 +80,7 @@ $(() => {
           });
         }, 2000)
 
-        setTimeout(()=>{
+        /*setTimeout(()=>{
           new SnackBar({
             message: "I shall contact you soon!",
             timeout: 2200,
@@ -87,24 +88,32 @@ $(() => {
             width: isMobile && '80vw'
 
           });
-        }, 3000)
+        }, 3000)*/
 
         form.reset()
         $('#myModal').removeClass('show');
       } else {
         response.json().then(data => {
           if (Object.hasOwn(data, 'errors')) {
-            let err = data["errors"].map(error => error["message"]).join(", ");            
-            new SnackBar({
-              message: err,
-              status: "warning",
-              timeout: 2000,
-              position: isMobile ? 'bc' : 'br',
-              width: isMobile && '80vw'
-
-
-            });
-            
+            let error = data['errors'][0];
+            if(error.code === "TYPE_EMAIL"){
+              new SnackBar({
+                message: "Verify you entered a valid email",
+                status: "warning",
+                timeout: 2000,
+                position: isMobile ? 'bc' : 'br',
+                width: isMobile && '80vw'
+              });
+            } else {
+              new SnackBar({
+                message: error.message,
+                status: "warning",
+                timeout: 2000,
+                position: isMobile ? 'bc' : 'br',
+                width: isMobile && '80vw'
+              });
+            }
+          
           } else {
             new SnackBar({
               message: "Oops! There was a problem submitting your form",
