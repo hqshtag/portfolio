@@ -1,11 +1,23 @@
 const cardNumber = ['one', 'two', 'three', 'four'];
+const keyWords = ['Professional', 'Projects', 'Skills', 'Education'];
     
 $(() => {
-
+  const BG_COLORS = ['103247', '23465b', '2b3a43', '183e65', '0d2139', '314951', '0c284b'];
+  let currentIndex = 0;
+  
+  function changeBackgroundColor() {
+      $('body').css('background-color', '#' + BG_COLORS[currentIndex]);
+      $('main.explore-m').css('background-color', '#' + BG_COLORS[currentIndex]);
+      //console.log('current background:', BG_COLORS[currentIndex])
+      currentIndex = (currentIndex + 1) % BG_COLORS.length;
+  }
+  setInterval(changeBackgroundColor, 8000);
+  
+  
     $('body').mPageTransition({
   
       // the color valuethat the page will fade to
-      color: "#722ACD",
+      color: "#00d0ff",
     
       // animation speed in milliseconds
       fadeOutTime: 300,
@@ -71,7 +83,10 @@ $(() => {
     if(!isMobile()) {
 
       $('.cards').on('CARD_SELECTED', (evnt, elemt) => {
-        
+
+       // let cardTitle = $(elemt).find('.card-title').text();
+       // whatWillHappen(whichIsWhich(cardTitle))
+
         const classess = $(elemt).attr('class').split(' ');
         for (let i = 0; i < cardNumber.length; i++) {
           if (classess[1] !== `card-${cardNumber[i]}`) {
@@ -144,6 +159,77 @@ $(() => {
   
   });
 
+  // Function to generate the HTML structure for a single event
+function generateEvent(title, date, description) {
+  return `
+      <div class="event">
+          <div class="title">${title}</div>
+          <div class="date">${date}</div>
+          <div class="description">${description}</div>
+      </div>
+  `;
+}
+
+  function whatWillHappen(result) {
+    switch (result) {
+        case 'Professional':
+            console.log('Perform actions related to Professional');
+            // Add your specific actions for the "Professional" keyword
+            $('.timeline').css('visibility', "visible");
+            $('.timeline').addClass('pro')
+
+            const proEventsArray = [
+              {
+                title: 'UpWork ~ Top Rated',
+                date: 'Aug 2019 - Present',
+                description: 'Experienced Fullstack Developer with a proven track record, offering top-notch services in web, mobile, and desktop application development. Committed to client satisfaction with a diverse skill set and a history of successful projects.'
+              },
+              {
+                title: 'Tutosh ~ Lead Software Developer',
+                date: 'Nov 2022 - Aug 2023',
+                description: 'I played a key role in collaborative development and feature maintenance. My focus involved working with microservices using NestJS in a Dockerized environment. Additionally, I contributed to the refactoring and integration of components and features within the Angular Invy framework. I demonstrated proficiency in managing deployments through Continuous Deployment and Integration (CDI) pipelines on AWS, ensuring smooth operations in both production and development environments.'
+              },
+              {
+                title: 'Oxygen Media Group ~ Mobile & Web Developer',
+                date: 'Apr 2021 - Oct 2021',
+                description:  'I played a key role in developing versatile applications, leading the Financial Accounting app\'s ReactJS development and mentoring junior developers. I also contributed significantly to the Live Streaming Social Media App, enhancing Flutter functionalities with Agora RTC and integrating new features into the Laravel Backend. My work demonstrated adaptability, proficiency across diverse technologies, and a commitment to fostering a collaborative and innovative development environment.'
+              }
+            ]
+
+            for (let i = 0; i < proEventsArray.length; i++) {
+              const event = proEventsArray[i];
+              const eventHTML = generateEvent(event.title, event.date, event.description);
+              $('.timeline').append(eventHTML);
+          }
+            break;
+
+        case 'Projects':
+            console.log('Perform actions related to Projects');
+            // Add your specific actions for the "Projects" keyword
+            break;
+
+        case 'Skills':
+            console.log('Perform actions related to Skills');
+            // Add your specific actions for the "Skills" keyword
+            break;
+
+        case 'Education':
+            console.log('Perform actions related to Education');
+            // Add your specific actions for the "Education" keyword
+            break;
+
+        case 'No corresponding keyword found':
+            console.log('No corresponding keyword found. Handle accordingly.');
+            // Add your handling for the case when no corresponding keyword is found
+            break;
+
+        default:
+            console.log('Unexpected result');
+            // Handle any unexpected result
+            break;
+    }
+}
+
 
   //function to check if the user is on a mobile device
   function isMobile() {
@@ -183,6 +269,25 @@ $(() => {
     setTimeout(callback, ms);
   }
 
+
+  function whichIsWhich(title) {
+    // Convert the title to lowercase for case-insensitive comparison
+    const lowercaseTitle = title.toLowerCase();
+
+    // Iterate through the keyWords array
+    for (let i = 0; i < keyWords.length; i++) {
+        // Convert the keyword to lowercase for case-insensitive comparison
+        const lowercaseKeyword = keyWords[i].toLowerCase();
+
+        // Check if the lowercase title contains the lowercase keyword
+        if (lowercaseTitle.includes(lowercaseKeyword)) {
+            return keyWords[i];
+        }
+    }
+
+    // If no match is found
+    return 'No corresponding keyword found';
+}
 
   // a function to check what string was passed ('Experiences', 'Projects', 'Skills', 'Education') and return the corresponding class
   function shortcut(string) {

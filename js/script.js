@@ -1,12 +1,26 @@
+const BG_COLORS = ['103247', '23465b', '2b3a43', '183e65', '0d2139', '314951', '0c284b'];
+let currentIndex = 0;
+
+function changeBackgroundColor() {
+    $('body').css('background-color', '#' + BG_COLORS[currentIndex]);
+    //console.log('current background:', BG_COLORS[currentIndex])
+    currentIndex = (currentIndex + 1) % BG_COLORS.length;
+}
+
+
 $(() => {
   console.log("Yay, a fellow developer! 🥳");
   console.log("Let's get in touche, and code something together 🤝 ");
   //console.log("I'll really appreciate your feedback");
 
+
+  // Change background color every 5 seconds
+  setInterval(changeBackgroundColor, 5000);
+
   $('body').mPageTransition({
 
     // the color valuethat the page will fade to
-    color: "#722ACD",
+    color: "#00d0ff",
   
     // animation speed in milliseconds
     fadeOutTime: 300,

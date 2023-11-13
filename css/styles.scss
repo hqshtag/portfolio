@@ -13,7 +13,7 @@
 @import './cards';
 
 $cyan: #00d0ff;
-$background: #191637;
+$background: #0d2139;
 
 
 * {
@@ -26,6 +26,8 @@ body {
   font-family: 'Voces', cursive;
   color: #d8e3e8;
   background-color: $background;
+
+  transition: all 2700ms cubic-bezier(.9,.07,.7,.88);
 
   h1 {
       font-size: 3.6rem;

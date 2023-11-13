@@ -420,7 +420,7 @@ div.actions a.righto span.bg, div.actions button.righto span.bg {
   left: unset;
   right: -5%;
   position: absolute;
-  background: #00d0ff;
+  background: #00748f;
   width: 0;
   height: 100%;
   z-index: 3;
@@ -503,7 +503,7 @@ div.actions a p span.base:before, div.actions button p span.base:before {
 div.actions a p span.bg, div.actions button p span.bg {
   left: -5%;
   position: absolute;
-  background: #00d0ff;
+  background: #00748f;
   width: 0;
   height: 100%;
   z-index: 3;
@@ -676,19 +676,28 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
   }
 }
 main.explore-m {
-  background-color: #1E1E1E;
+  background-color: #0d2139;
   color: white;
   height: 100%;
   width: 100%;
   padding: 1rem 0;
   display: grid;
   place-content: center;
-  z-index: 55;
+  z-index: 5555;
+  transition: all 2700ms cubic-bezier(0.9, 0.07, 0.7, 0.88);
 }
 main.explore-m .actions-m {
   position: absolute;
   bottom: 30px;
   left: 0;
+}
+main.explore-m .timeline {
+  visibility: hidden;
+}
+main.explore-m .timeline.pro {
+  position: absolute;
+  left: 54%;
+  top: 150px;
 }
 
 span#invDirection {
@@ -707,9 +716,9 @@ span#invDirection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 60px;
-  gap: 8rem 16rem;
+  gap: 8rem 8rem;
   pointer-events: none;
-  max-width: 80vw;
+  max-width: 90vw;
   transition: all 400ms ease-in-out;
 }
 
@@ -717,12 +726,12 @@ span#invDirection {
   cursor: pointer;
   position: relative;
   opacity: 0;
-  max-width: 24rem;
+  max-width: 36rem;
   color: rgba(255, 255, 255, 0.8549019608);
   padding: 1.5rem;
   background-color: #202022;
   transform: scale(1) translateX(500%);
-  transition: transform 800ms ease-in, opacity 1000ms ease-in-out;
+  transition: all 1.5s ease-in-out, transform 800ms ease-in, opacity 1000ms ease-in-out;
   display: flex;
   flex-direction: column;
   z-index: 1000;
@@ -734,26 +743,28 @@ span#invDirection {
 }
 .card.selected {
   transform: scale(1.18) !important;
+  transition: all 1.5s ease-in-out;
 }
 .card.selected .card-title::before {
-  box-shadow: inset 0 0 14px #7000FF;
+  box-shadow: inset 0 0 14px #00d0ff;
 }
 .card .card-title {
   position: relative;
+  font-size: 30px;
 }
 .card .card-title::before {
   content: "";
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
-  box-shadow: inset 0 0 3px #7000FF;
+  box-shadow: inset 0 0 3px #00d0ff;
   background-color: transparent;
   position: absolute;
   right: 0;
   transition: box-shadow 400ms ease-in-out;
 }
 .card:hover .card-title::before {
-  box-shadow: inset 0 0 10px #7000FF;
+  box-shadow: inset 0 0 10px #00d0ff;
 }
 .card .description {
   font-size: 1rem;
@@ -762,7 +773,7 @@ span#invDirection {
   opacity: 0;
   cursor: pointer;
   position: absolute;
-  top: 25px;
+  top: 24px;
   right: 44px;
   height: 16px;
   width: 16px;
@@ -787,7 +798,7 @@ span#invDirection {
 
 @media (max-width: 1100px) {
   .cards {
-    margin-top: 18vh;
+    margin-top: 4vh;
     gap: 4rem 6rem;
   }
   .cards .card {
@@ -816,6 +827,10 @@ span#invDirection {
   .cards .card .description {
     font-size: 13px;
   }
+  .cards #red-circle {
+    top: 16px !important;
+    right: 36px !important;
+  }
 }
 * {
   margin: 0;
@@ -826,7 +841,8 @@ body {
   overflow: hidden;
   font-family: "Voces", cursive;
   color: #d8e3e8;
-  background-color: #191637;
+  background-color: #0d2139;
+  transition: all 2700ms cubic-bezier(0.9, 0.07, 0.7, 0.88);
 }
 body h1 {
   font-size: 3.6rem;

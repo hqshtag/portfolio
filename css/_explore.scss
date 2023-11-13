@@ -1,14 +1,15 @@
 main.explore-m {
-    background-color: #1E1E1E;
+    background-color: #0d2139;
     color: white;
     height: 100%;
     width: 100%;
     padding: 1rem 0;
     display: grid;
     place-content: center;
-    z-index: 55;
+    z-index: 5555;
 
-  
+    transition: all 2700ms cubic-bezier(.9,.07,.7,.88);
+
 
     .actions-m {
   
@@ -17,6 +18,16 @@ main.explore-m {
         left: 0;
       
 
+    }
+
+    .timeline {
+        visibility: hidden;
+
+        &.pro {
+            position: absolute;
+            left: 54%;
+            top: 150px
+        }
     }
 }
 
