@@ -1,10 +1,46 @@
 main.explore-m {
-    background-color: #1E1E1E;
+    background-color: #0d2139;
     color: white;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 0;
+    display: grid;
+    place-content: center;
+    z-index: 5555;
+
+    transition: all 2700ms cubic-bezier(.9,.07,.7,.88);
+
+
+    .actions-m {
+  
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+      
+
+    }
+
+    .timeline {
+        visibility: hidden;
+
+        &.pro {
+            position: absolute;
+            left: 54%;
+            top: 150px
+        }
+    }
 }
 
 span#invDirection {
     transform: rotate(180deg);
     position: absolute;
     left: 20%;
+}
+
+//media query for less 768px
+@media (max-width: 768px) {
+    main.explore-m { .actions-m {
+            position: absolute;
+            bottom: 22px;
+        } }
 }

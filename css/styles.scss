@@ -10,7 +10,10 @@
 @import "./actions";
 @import "./modal";
 @import "./explore";
+@import './cards';
 
+$cyan: #00d0ff;
+$background: #0d2139;
 
 
 * {
@@ -22,7 +25,9 @@ body {
   overflow: hidden;
   font-family: 'Voces', cursive;
   color: #d8e3e8;
-  background-color: #1E1E1E;
+  background-color: $background;
+
+  transition: all 2700ms cubic-bezier(.9,.07,.7,.88);
 
   h1 {
       font-size: 3.6rem;
@@ -49,7 +54,7 @@ body {
   top: 0;
   position: absolute;
   width: 100vw;
-   height: 100vh;
+  height: 100vh;
   z-index: 0;
 }
 
@@ -58,7 +63,7 @@ body {
 
 
 span.highlight {
-  color: #7000FF;
+  color: $cyan;
   font-size: 3.6rem;
  }
 
@@ -84,7 +89,6 @@ span.highlight {
 }
 
   span.highlight {
-    color: #7000FF;
     font-size: 2.1rem;
    }
  

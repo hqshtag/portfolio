@@ -160,7 +160,6 @@
   padding: 0 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   color: #BBB;
 }
@@ -190,7 +189,7 @@
 .hero div#IdHeader #title {
   opacity: 0;
   font-size: 2.2rem;
-  color: #7000FF;
+  color: #00d0ff;
   letter-spacing: 1px;
   transition: opacity 800ms ease-in-out 1500ms;
 }
@@ -266,7 +265,7 @@
     font-size: 1.1rem;
   }
   .hero h1,
-.hero h2 {
+  .hero h2 {
     margin: 24px 30px;
   }
 }
@@ -409,7 +408,7 @@ div.actions a, div.actions button {
   padding: 8px;
   font-size: 0.8rem;
   font-weight: 900;
-  color: #7000FF;
+  color: #00d0ff;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
@@ -421,7 +420,7 @@ div.actions a.righto span.bg, div.actions button.righto span.bg {
   left: unset;
   right: -5%;
   position: absolute;
-  background: #7000FF;
+  background: #00748f;
   width: 0;
   height: 100%;
   z-index: 3;
@@ -489,7 +488,7 @@ div.actions a p span.base, div.actions button p span.base {
   width: 100%;
   height: 100%;
   left: 0;
-  border: 1px solid #7000FF;
+  border: 1px solid #00d0ff;
 }
 div.actions a p span.base:before, div.actions button p span.base:before {
   content: "";
@@ -504,7 +503,7 @@ div.actions a p span.base:before, div.actions button p span.base:before {
 div.actions a p span.bg, div.actions button p span.bg {
   left: -5%;
   position: absolute;
-  background: #7000FF;
+  background: #00748f;
   width: 0;
   height: 100%;
   z-index: 3;
@@ -549,6 +548,10 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
     width: calc(50vw - 110px);
     height: 52px;
   }
+  div.actions button {
+    width: calc(50vw - 110px);
+    height: 52px;
+  }
 }
 @media screen and (max-width: 600px) {
   div.actions {
@@ -558,11 +561,11 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
     flex-direction: column-reverse;
   }
   div.actions a {
-    width: 280px;
+    width: calc(80vw - 15px);
     height: 48px;
   }
   div.actions button {
-    width: 80%;
+    width: 80vw;
     height: 52px;
   }
 }
@@ -673,8 +676,28 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
   }
 }
 main.explore-m {
-  background-color: #1E1E1E;
+  background-color: #0d2139;
   color: white;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  place-content: center;
+  z-index: 5555;
+  transition: all 2700ms cubic-bezier(0.9, 0.07, 0.7, 0.88);
+}
+main.explore-m .actions-m {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+}
+main.explore-m .timeline {
+  visibility: hidden;
+}
+main.explore-m .timeline.pro {
+  position: absolute;
+  left: 54%;
+  top: 150px;
 }
 
 span#invDirection {
@@ -683,6 +706,132 @@ span#invDirection {
   left: 20%;
 }
 
+@media (max-width: 768px) {
+  main.explore-m .actions-m {
+    position: absolute;
+    bottom: 22px;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 60px;
+  gap: 8rem 8rem;
+  pointer-events: none;
+  max-width: 90vw;
+  transition: all 400ms ease-in-out;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.8549019608);
+  padding: 1.5rem;
+  background-color: #202022;
+  transform: scale(1) translateX(500%);
+  transition: all 1.5s ease-in-out, transform 800ms ease-in, opacity 1000ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+.card.appear {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateX(0) rotate(1deg);
+}
+.card.selected {
+  transform: scale(1.18) !important;
+  transition: all 1.5s ease-in-out;
+}
+.card.selected .card-title::before {
+  box-shadow: inset 0 0 14px #00d0ff;
+}
+.card .card-title {
+  position: relative;
+  font-size: 30px;
+}
+.card .card-title::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 3px #00d0ff;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  transition: box-shadow 400ms ease-in-out;
+}
+.card:hover .card-title::before {
+  box-shadow: inset 0 0 10px #00d0ff;
+}
+.card .description {
+  font-size: 1rem;
+}
+.card #red-circle {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 44px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px #e93965;
+  z-index: 1400;
+  transition: opacity 780ms ease-out, background-color 400ms ease-in-out, box-shadow 400ms ease-in-out;
+  pointer-events: auto;
+}
+.card #red-circle:hover {
+  box-shadow: inset 0 0 14px #e93965;
+}
+.card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(179, 121, 255, 0.4745098039);
+  z-index: 1001;
+}
+
+.cards:not(.oneSelected):hover > .card:not(:hover) {
+  opacity: 0.4;
+}
+
+@media (max-width: 1100px) {
+  .cards {
+    margin-top: 4vh;
+    gap: 4rem 6rem;
+  }
+  .cards .card {
+    max-width: 20rem;
+  }
+}
+@media (max-width: 900px) {
+  .cards {
+    gap: 3rem 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 0.8rem;
+    gap: 1.2rem;
+  }
+  .cards .card {
+    max-width: 73vw;
+    max-height: 18vh;
+    padding: 1rem;
+  }
+  .cards .card .card-title {
+    font-size: 24px;
+  }
+  .cards .card .description {
+    font-size: 13px;
+  }
+  .cards #red-circle {
+    top: 16px !important;
+    right: 36px !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -692,7 +841,8 @@ body {
   overflow: hidden;
   font-family: "Voces", cursive;
   color: #d8e3e8;
-  background-color: #1E1E1E;
+  background-color: #0d2139;
+  transition: all 2700ms cubic-bezier(0.9, 0.07, 0.7, 0.88);
 }
 body h1 {
   font-size: 3.6rem;
@@ -720,7 +870,7 @@ body section {
 }
 
 span.highlight {
-  color: #7000FF;
+  color: #00d0ff;
   font-size: 3.6rem;
 }
 
@@ -741,7 +891,6 @@ span.highlight {
     margin: 3.6rem auto;
   }
   span.highlight {
-    color: #7000FF;
     font-size: 2.1rem;
   }
 }
@@ -804,15 +953,6 @@ span.typed-cursor {
 
 .m-pagetransition {
   visibility: hidden;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes fadeIn {
