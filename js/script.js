@@ -6,6 +6,7 @@ function changeBackgroundColor() {
     //console.log('current background:', BG_COLORS[currentIndex])
     currentIndex = (currentIndex + 1) % BG_COLORS.length;
 }
+const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
 
 $(() => {
@@ -13,6 +14,8 @@ $(() => {
   console.log("Let's get in touche, and code something together 🤝 ");
   //console.log("I'll really appreciate your feedback");
 
+  //if mobile device, remove the discover me button
+  if(isMobile) $('#discover-btn').remove();
 
   // Change background color every 5 seconds
   setInterval(changeBackgroundColor, 5000);
@@ -62,7 +65,6 @@ $(() => {
 
   let form = document.getElementById("contact-me-form");
     
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
   async function handleSubmit(event) {
     event.preventDefault();
