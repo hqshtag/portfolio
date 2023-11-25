@@ -1,4 +1,4 @@
-let dev = false;
+let dev = true;
 
 function loadScript(url) {
 	return new Promise(function(resolve, reject) {

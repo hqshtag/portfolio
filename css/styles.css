@@ -387,7 +387,7 @@ div.actions {
   width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   z-index: 1;
   opacity: 0;
   transition: opacity 650ms ease-in 3s, bottom 800ms ease;
@@ -403,7 +403,7 @@ div.actions button {
 }
 div.actions a, div.actions button {
   cursor: pointer;
-  width: 360px;
+  width: 331px;
   height: 54px;
   padding: 8px;
   font-size: 0.8rem;
@@ -579,7 +579,7 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.78);
+  background-color: rgba(0, 0, 0, 0.722);
   transition: all 480ms ease-in-out;
   z-index: 9;
 }
@@ -598,21 +598,22 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
   align-items: center;
   z-index: 499;
   padding: 8px;
+  border-radius: 8px;
 }
 #myModal .modal-wrapper .modal-header {
   width: 100%;
-  border-bottom: 1px solid #1e1e1e;
 }
 #myModal .modal-wrapper .modal-header h2 {
   text-align: center;
-  color: #575757;
-  margin-bottom: 8px;
+  color: #3164ed;
+  margin-top: 20px;
+  margin-bottom: -22px;
 }
 #myModal .modal-wrapper .modal-content {
   width: 94%;
-  margin: 8px;
+  margin: 4px 8px;
 }
-#myModal .modal-wrapper .modal-content input {
+#myModal .modal-wrapper .modal-content input, #myModal .modal-wrapper .modal-content textarea {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -621,33 +622,44 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
   resize: none;
   border: 0;
   font-family: "Montserrat", sans-serif;
-  transition: all 0.3s;
-  border-bottom: 2px solid #bebed2;
+  transition: all 0.8s;
+  border-bottom: 2px solid rgba(47, 47, 47, 0.431372549);
 }
-#myModal .modal-wrapper .modal-content input:focus {
-  border-bottom: 2px solid #78788c;
+#myModal .modal-wrapper .modal-content input:focus, #myModal .modal-wrapper .modal-content textarea:focus {
+  border-bottom: 2px solid #3164ed;
+}
+#myModal .modal-wrapper .modal-content textarea {
+  padding-top: 18px;
 }
 #myModal .modal-wrapper .modal-content p:before {
   content: attr(type);
   display: block;
   margin: 28px 0 0;
   font-size: 14px;
-  color: #5a5a5a;
+  color: #1e1e1e;
+  font-weight: 600;
 }
 #myModal .modal-wrapper .modal-content button {
   float: right;
   padding: 8px 12px;
   margin: 8px 5px 0;
   font-family: "Montserrat", sans-serif;
-  border: 2px solid #78788c;
+  border: 2px solid #78878c;
   background: 0;
   color: #5a5a6e;
+  min-width: 200px;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+#myModal .modal-wrapper .modal-content button:last-child {
+  min-width: 120px;
 }
 #myModal .modal-wrapper .modal-content button:hover {
-  background: #58565b;
+  background: #3164ed;
   color: #fff;
+}
+#myModal .modal-wrapper .modal-content button:last-child:hover {
+  background-color: #e15d5d;
 }
 #myModal .modal-wrapper .modal-footer {
   width: 100%;
@@ -671,8 +683,11 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
 
 @media screen and (max-width: 600px) {
   #myModal .modal-wrapper {
-    margin-top: 5rem;
+    margin-top: 8rem;
     width: 78vw;
+  }
+  #myModal .modal-wrapper button {
+    min-width: 120px !important;
   }
 }
 main.explore-m {

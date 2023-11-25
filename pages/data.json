@@ -1,0 +1,39 @@
+{
+    "pro": [
+        {
+            "title": "UpWork ~ Top Rated",
+            "date": "Aug 2019 - Present",
+            "description": "Experienced Fullstack Developer with a proven track record, offering top-notch services in web, mobile, and desktop application development. Committed to client satisfaction with a diverse skill set and a history of successful projects.",
+            "logo": "upwork.png",
+            "keywords": "Node.js, React, Firebase, Javascript, Sass, Typescript, RESTful Architecture, CSS, Mobile App Development, Electron, Web Development, Redux, RESTful API, Web Design"
+        },
+        {
+            "title": "Tutosh ~ Lead Software Developer",
+            "date": "Nov 2022 - Aug 2023",
+            "description": "I played a key role in collaborative development and feature maintenance. My focus involved working with microservices using NestJS in a Dockerized environment. Additionally, I contributed to the refactoring and integration of components and features within the Angular Invy framework. I demonstrated proficiency in managing deployments through Continuous Deployment and Integration (CDI) pipelines on AWS, ensuring smooth operations in both production and development environments.",
+            "logo": "tutosh.png",
+            "keywords": "NestJS, GraphQL Architecture, Angular, SSH, Micro-services, AWS CodeCommit, CI/CD, PostgreSQL, Docker, Docker Compose"
+        },
+        {
+            "title": "Oxygen Media Group ~ Mobile & Web Developer",
+            "date": "Apr 2021 - Nov 2021",
+            "description": "I played a key role in developing versatile applications, leading the Financial Accounting app's ReactJS development and mentoring junior developers. I also contributed significantly to the Live Streaming Social Media App, enhancing Flutter functionalities with Agora RTC and integrating new features into the Laravel Backend. My work demonstrated adaptability, proficiency across diverse technologies, and a commitment to fostering a collaborative and innovative development environment.",
+            "logo": "oxygen.png",
+            "keywords": "Flutter, Dart, Google Console, Android Development, Social Media App, Live Streaming, Agora, Laravel, PHP, MySQL, React, Redux, Python, Django"
+        },
+        {
+            "title": "Autofy ~ Front End Developer",
+            "date": "Jul 2020 - Mar 2021",
+            "description": "Engaged as a Full Stack Developer at Autofy, a cutting-edge Car Trading Platform, where I transformed System Design mock-ups into a dynamic React/SaSS Library. Additionally, played a key role in updating the Node API to address specific endpoint issues, ensuring seamless functionality. As part of the project evolution, successfully migrated from JavaScript to Typescript, contributing to an improved project structure and enhanced user experience.",
+            "logo": "autofy.png",
+            "keywords": "React & Redux, Typescript, SaSS, Data Flow Architecture, Responsive WebApp, Smart Components"
+        },
+        {
+            "title": "Aurax ~ Internship",
+            "date": "Jun 2019 - Sep 2019",
+            "description": "Interning as a Full Stack Developer at Aurax, I contributed to the development of a License Management Application. Leveraging the MERN stack (MongoDB, Express, React, Node), I embraced Agile methodology through Kanban Boards, implementing Test Driven Development, and adhering to best practices. Additionally, actively participated in the Gitflow process to ensure efficient version control and collaborative development.",
+            "logo": "aurax.png",
+            "keywords": "MongoDB, ExpressJs, React, NodeJs, Agile Developement, Test Driven Development, Git, GitFlow"
+        }
+    ]
+}

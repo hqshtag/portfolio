@@ -53,6 +53,7 @@ $(() => {
 
   $('#cancelMessage').on('click', (event)=>{
     event.preventDefault();
+    document.getElementById("contact-me-form").reset();
     $('#myModal').removeClass('show');
 
     return false;

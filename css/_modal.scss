@@ -1,3 +1,4 @@
+
 #myModal {
     visibility: hidden;
     opacity: 0;
@@ -12,7 +13,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(0, 0, 0, 0.78);
+    background-color: rgba(0, 0, 0, 0.722);
 
 
     transition: all 480ms ease-in-out;
@@ -38,23 +39,25 @@
         z-index: 499;
 
         padding: 8px;
+        border-radius: 8px;
 
         & .modal-header {
             width: 100%;
 
             h2 {
                 text-align: center;
-                color: #575757;
-                margin-bottom: 8px;
+                color: #3164ed;
+                margin-top: 20px;
+                margin-bottom: -22px;            
             }
-
-            border-bottom: 1px solid #1e1e1e;
+            //border-top: 1px solid #2e2e2e;
+           // border-bottom: 2px solid  #1e1e1ea7;//#3164ed;
         }
 
         & .modal-content {
             width: 94%;
-            margin: 8px;
-            input {
+            margin: 4px 8px;
+            input, textarea {
                 width: 100%;
                 padding: 10px;
                 box-sizing: border-box;
@@ -63,12 +66,15 @@
                 resize: none;
                 border: 0;
                 font-family: "Montserrat", sans-serif;
-                transition: all 0.3s;
-                border-bottom: 2px solid #bebed2;
+                transition: all 0.8s;
+                border-bottom: 2px solid #2f2f2f6e;
+                &:focus {
+                    border-bottom: 2px solid #3164ed;
+                }
             }
 
-            input:focus {
-                border-bottom: 2px solid #78788c;
+            textarea {
+                padding-top: 18px;
             }
 
             p:before {
@@ -76,7 +82,8 @@
                 display: block;
                 margin: 28px 0 0;
                 font-size: 14px;
-                color: #5a5a5a;
+                color: #1e1e1e;
+                font-weight: 600;
             }
 
             
@@ -85,18 +92,24 @@
                 padding: 8px 12px;
                 margin: 8px 5px 0;
                 font-family: "Montserrat", sans-serif;
-                border: 2px solid #78788c;
+                border: 2px solid #78878c;
                 background: 0;
                 color: #5a5a6e;
+                min-width: 200px;
                 cursor: pointer;
-                transition: all 0.3s ease-out;
+                transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+                &:last-child{
+                    min-width: 120px;
+                }
+                &:hover {
+                    background: #3164ed;
+                    color: #fff; 
+                }
+                &:last-child:hover {
+                    background-color: #e15d5d;
+                }
+    
             }
-
-            button:hover {
-                background: #58565b;
-                color: #fff;
-            }
-
 
 
         }
@@ -131,8 +144,11 @@
 @media screen and (max-width: 600px) {
     #myModal {
         & .modal-wrapper {
-            margin-top: 5rem;
+            margin-top: 8rem;
             width: 78vw;
+            button {
+                min-width: 120px !important;            
+            }
         }
 
     }
