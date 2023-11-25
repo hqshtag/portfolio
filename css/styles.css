@@ -555,17 +555,17 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
 }
 @media screen and (max-width: 600px) {
   div.actions {
-    bottom: 14vh;
+    bottom: 13vh;
     width: 100%;
-    margin-top: 30px;
-    flex-direction: column-reverse;
+    margin-top: 33px;
+    flex-direction: column;
   }
   div.actions a {
-    width: calc(80vw - 15px);
+    width: calc(88vw - 8px);
     height: 48px;
   }
   div.actions button {
-    width: 80vw;
+    width: calc(88vw + 7px);
     height: 52px;
   }
 }
@@ -687,7 +687,7 @@ div.actions a:hover span.text:after, div.actions button:hover span.text:after {
     width: 78vw;
   }
   #myModal .modal-wrapper button {
-    min-width: 120px !important;
+    min-width: 70px !important;
   }
 }
 main.explore-m {
@@ -890,14 +890,18 @@ span.highlight {
 }
 
 @media screen and (max-width: 600px) {
+  #IdHeader {
+    top: 1rem !important;
+    margin: auto 12px !important;
+  }
   body {
     overflow-y: scroll;
   }
   body h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   body h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   body p, body li {
     font-size: 1rem;

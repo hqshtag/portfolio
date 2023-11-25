@@ -70,15 +70,19 @@ span.highlight {
 
 
 @media screen and (max-width: 600px) {
+  #IdHeader {
+    top: 1rem !important;
+    margin: auto 12px !important;
+  }
 
   body { 
     overflow-y: scroll;
 
     h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   p, li {
     font-size: 1rem;

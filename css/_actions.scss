@@ -221,19 +221,19 @@ div.actions {
 
 @media screen and (max-width: 600px) {
     div.actions {
-        bottom: 14vh;
+        bottom: 13vh;
         width: 100%;
-        margin-top: 30px;
-        flex-direction: column-reverse;
+        margin-top: 33px;
+        flex-direction: column;
 
         & a {
-            width: calc(80vw - 15px );
+            width: calc(88vw - 8px );
             height: 48px;
         }
 
         & button {
            // padding: 8px 4px;
-            width: 80vw;
+            width: calc(88vw + 7px);
             height: 52px;
         }
     }
